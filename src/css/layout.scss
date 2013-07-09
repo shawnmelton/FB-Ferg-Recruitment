@@ -4,12 +4,32 @@ html {
 	font-family: arial, sans-serif;
 	font-size: 13px;
 
-	body {
+	>body {
+		position: relative;
 		margin: 0;
 
-		header {
+		>header {
 			height: 47px;
 			background: $fergBlue url(../img/logo.png) no-repeat 0 0;
+		}
+
+		>div {
+
+		}
+
+		>footer {
+
+		}
+
+		>#overlay {
+			margin: 0;
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			background: #000;
+			opacity: 0.8;
 		}
 	}
 }
