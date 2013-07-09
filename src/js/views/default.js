@@ -1,19 +1,24 @@
 define([
-	"jquery",
-	"underscore",
-	"backbone",
-	'libs/text!templates/default.html'
-	], function($, _, Backbone, defaultHTML){
+	'jquery',
+	'underscore',
+	'backbone',
+	'tools/twitterFeed',
+	'tools/recruitmentTeamSlider'
+	], function($, _, Backbone, TwitterFeed, RecruitmentTeamSlider){
 		var defaultView = Backbone.View.extend({
-			el: "body > div",
+			el: "#content",
 
-			/**
-			 * Reach out to API to pull in page content.
-			 * If content is cached, then just pull cached data.
-			 */
+			addTwitterFeed: function() {
+				TwitterFeed.render();
+			},
+
+			addRecruitmentTeamSlider: function() {
+				RecruitmentTeamSlider.render();
+			},
+
 			render: function(){
-				this.$el
-					.html(_.template(defaultHTML, {}));
+				this.addTwitterFeed();
+				this.addRecruitmentTeamSlider();
 			}
 		});
 		

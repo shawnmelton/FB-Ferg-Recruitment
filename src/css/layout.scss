@@ -1,7 +1,12 @@
 $fergBlue: #00567f;
 
 html {
+	font-family: arial, sans-serif;
+	font-size: 13px;
+
 	body {
+		margin: 0;
+
 		header {
 			height: 47px;
 			background: $fergBlue url(../img/logo.png) no-repeat 0 0;
