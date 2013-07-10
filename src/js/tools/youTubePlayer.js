@@ -1,54 +1,84 @@
 define(['jquery'], function($) {
 	var YouTubePlayer = function() {};
 	YouTubePlayer.prototype = {
-		videoId: rGgX_oqdib4,
-		overlay: false,
-		video: false,
+		videoEl: false,
+		videoId: "rGgX_oqdib4",
+		overlayEl: false,
 
-		hide: function() {
+		/**
+		 * Bind the escape key to hide the video.
+		 */
+		addEscapeEvent: function() {
+			var _this = this;
+			$(document).keydown(function(event) {
+				if(event.which == 27) {
+					_this.hidePlayer();
+				}
+			});
+		},
+
+		hidePlayer: function() {
+			this.removeEscapeEvent();
 			this.hideVideo();
-			this.overlay.unbind("click");
+			this.overlayEl.unbind("click");
 		},
 
 		hideOverlay: function() {
-			if(this.overlay !== false) {
-				this.overlay.fadeOut();
-			}
+			this.overlayEl.fadeOut();
 		},
 
 		hideVideo: function() {
-			if(this.video !== false) {
-				var _this = this;
-				this.video.fadeOut(function() {
-					_this.hideOverlay();
-				});
-			}
+			var _this = this;
+			this.videoEl.css("display", "none");
+			this.hideOverlay();
+			this.videoEl.remove();
+			this.videoEl = false;
 		},
 
-		show: function() {
+		/**
+		 * Listen for user to click the video thumbnail before we fire off video.
+		 */
+		listen: function(button) {
+			var _this = this;
+			button.click(function() {
+				_this.showPlayer();
+			});
+		},
+
+		/**
+		 * Unbind the escape key event.
+		 */
+		removeEscapeEvent: function() {
+			$(document).unbind("keydown");
+		},
+
+		showPlayer: function() {
 			this.showOverlay();
 			this.showVideo();
+			this.addEscapeEvent();
 		},
 
 		showOverlay: function() {
-			if(this.overlay === false) {
-				this.overlay = $("body").append('<p id="overlay"></p>');
-			} else {
-				this.overlay.fadeIn();
+			if(this.overlayEl === false) {
+				this.overlayEl = $('<p id="ytp-overlay"></p>');
+				$("body").append(this.overlayEl);
 			}
 
+			this.overlayEl.fadeIn();
+			
 			var _this = this;
-			this.overlay.click(function() {
-				_this.hide();
+			this.overlayEl.click(function() {
+				_this.hidePlayer();
 			});
 		},
 
 		showVideo: function() {
-			if(this.video !== false) {
-				this.video = $("body").append('');
-			} else {
-				this.video.fadeIn();
+			if(this.videoEl === false) {
+				this.videoEl = $('<section id="ytp-video"><iframe width="800" height="450" frameborder="0" allowfullscreen="1" src="http://www.youtube.com/embed/'+ this.videoId +'?autoplay=1">Your browser does not support iframes.  Please enable this feature to take advantage of the all the features of this app.</iframe></section>');
+				$("body").append(this.videoEl);
 			}
+
+			this.videoEl.fadeIn();
 		}
 	};
 

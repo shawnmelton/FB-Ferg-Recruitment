@@ -3,22 +3,16 @@ define([
 	'underscore',
 	'backbone',
 	'tools/twitterFeed',
-	'tools/recruitmentTeamSlider'
-	], function($, _, Backbone, TwitterFeed, RecruitmentTeamSlider){
+	'tools/recruitmentTeamSlider',
+	'tools/youTubePlayer'
+	], function($, _, Backbone, TwitterFeed, RecruitmentTeamSlider, YouTubePlayer){
 		var defaultView = Backbone.View.extend({
 			el: "#content",
 
-			addTwitterFeed: function() {
-				TwitterFeed.render();
-			},
-
-			addRecruitmentTeamSlider: function() {
-				RecruitmentTeamSlider.render();
-			},
-
 			render: function(){
-				this.addTwitterFeed();
-				this.addRecruitmentTeamSlider();
+				TwitterFeed.render();
+				RecruitmentTeamSlider.render();
+				YouTubePlayer.listen($("#youtube > img"));
 			}
 		});
 		
