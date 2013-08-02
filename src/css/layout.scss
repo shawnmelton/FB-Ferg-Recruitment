@@ -12,10 +12,10 @@ html {
 	>body {
 		position: relative;
 		margin: 0;
-		background: #f6f6f6;
 
 		>#wrapper {
 			width: 800px;
+			background: #f6f6f6;
 
 			@mixin clearfix {
 				content: " ";
@@ -26,12 +26,27 @@ html {
 			a {
 				cursor: pointer;
 				outline: none;
+
+				>span { display: none; }
 			}
 
-			.greenText { color: $greenText; }
-			.orangeText { color: $orangeText; }
-			.blueText { color: $blueText; }
-			.redText { color: $redText; }
+			.upper { text-transform: uppercase; }
+			.greenText {
+				color: $greenText;
+				border-color: $greenText;
+			}
+			.orangeText {
+				color: $orangeText;
+				border-color: $orangeText;
+			}
+			.blueText {
+				color: $blueText;
+				border-color: $blueText;
+			}
+			.redText {
+				color: $redText;
+				border-color: $redText;
+			}
 
 			>header {
 				height: 47px;
@@ -59,8 +74,6 @@ html {
 					background: url(../img/social-media-icons.png) no-repeat 0 0;
 
 					&:hover { background-position: -20px 0; }
-
-					>span { display: none; }
 
 					&#instagram { 
 						background-position: 0 -60px;
@@ -96,19 +109,156 @@ html {
 				}
 
 				>h3, >h1 {
-					margin: 0;
+					margin: 0 385px 0 0;
 					color: $grayText;
 					font-weight: normal;
 				}
 				>h3 {
-
+					padding-bottom: 15px;
+					margin-bottom: 15px;
+					border-bottom: 2px solid #d4d4d4;
 				}
 				>h1 {
 
 				}
 			}
-			>div {
-				>#meet-our-team {
+
+			>section#events {
+				background: $fergBlue;
+				border: 3px solid $orangeText;
+				border-width: 3px 0;
+				color: #fff;
+				padding: 20px;
+
+				&:after { @include clearfix; }
+
+				>#events-list {
+					width: 380px;
+					float: right;
+					padding-left: 25px;
+
+					>h3 {
+						margin: 2px 0 16px;
+						font-weight: normal;
+						text-align: center;
+					}
+					
+					>div {
+						padding: 0 0 10px;
+						background: url(../img/events-list-bottom.png) repeat-x bottom left;
+
+						>table {
+							border-collapse: collapse;
+
+							th {
+								font-weight: bold;
+								padding: 7px 7px 15px;
+							}
+
+							td {
+								padding: 7px;
+								vertical-align: top;
+							}
+
+							tr.odd > td { background: #16648b; }
+						}
+					}
+
+					>p {
+						margin: 9px auto 0;
+						width: 73px;
+
+						&:after { @include clearfix; }
+
+						>a {
+							display: block;
+							width: 30px;
+							height: 30px;
+							background: url(../img/events-list-buttons.png) no-repeat 0 -30px;
+							float: left;
+
+							&:hover { background-position: -30px -30px; }
+							&:active { background-position: -60px -30px; }
+
+							&:first-child {
+								background-position: 0 0;
+								margin-right: 13px;
+
+								&:hover { background-position: -30px 0; }
+								&:active { background-position: -60px 0; }
+							}
+						}
+					}
+				}
+
+				>#apply-buttons {
+					&:after { @include clearfix; }
+
+					>p {
+						margin: 20px 0 0;
+						float: left;
+						text-align: center;
+						width: 152px;
+
+						&:first-child { margin-right: 30px; }
+
+						>span {
+							display: block;
+							text-transform: uppercase;
+							margin-bottom: 15px;
+						}
+
+						>a {
+							display: block;
+							height: 34px;
+							width: 152px;
+							background: url(../img/apply-button.png) no-repeat 0 0;
+
+							&:hover { background-position: 0 -34px; }
+							&:active { background-position: 0 -68px; }
+						}
+					}
+				}
+			}
+
+			>section#openings {
+				padding: 25px 40px;
+
+				>h2 {
+					margin: 0 0 25px;
+					color: #808185;
+					font-weight: normal;
+					text-align: center;
+				}
+
+				>div {
+					width: 720px;
+					height: 160px;
+					background: #01326a;
+				}
+			}
+
+			>div#three-columns {
+				padding: 47px 25px 0;
+
+				&:after { @include clearfix; }
+
+				>section {
+					width: 225px;
+					float: left;
+					overflow: hidden;
+					padding-left: 25px;
+
+					&:first-child { padding-left: 0; }
+
+					>h3 {
+						padding-bottom: 15px;
+						margin-bottom: 23px;
+						border-bottom-width: 2px;
+						border-bottom-style: solid;				
+					}
+				}
+				>section#meet-our-team {
 					>div {
 						position: relative;
 						width: 200px;
@@ -157,7 +307,10 @@ html {
 			}
 
 			>footer {
-
+				margin-top: 30px;
+				border-top: 3px solid $orangeText;
+				background: $fergBlue;
+				min-height: 200px;
 			}
 		}
 

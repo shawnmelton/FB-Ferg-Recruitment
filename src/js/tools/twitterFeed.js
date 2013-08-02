@@ -1,4 +1,4 @@
-define(['jquery', 'underscore', 'libs/text!templates/twitterFeed.html'], function($, _, feedHTML) {
+define(['jquery', 'templates/html.jst'], function($, htmlJST) {
 	var TwitterFeed = function() {};
 	TwitterFeed.prototype = {
 		feedUrl: "https://twitter.com/FergusonCareers",
@@ -6,10 +6,10 @@ define(['jquery', 'underscore', 'libs/text!templates/twitterFeed.html'], functio
 		el: $("#twitter-feed"),
 
 		render: function() {
-			this.el.html(_.template(feedHTML, {
+			this.el.html(JST['src/js/templates/twitterFeed.html']({
 				handle: this.feedHandle,
 				url: this.feedUrl
-			}))
+			}));
 		}
 	};
 

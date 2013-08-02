@@ -1,4 +1,4 @@
-define(['jquery', 'underscore', 'libs/text!templates/meetOurTeam.html'], function($, _, teamHTML) {
+define(['jquery', 'templates/html.jst'], function($, htmlJST) {
 	var RecruitmentTeamSlider = function() {};
 	RecruitmentTeamSlider.prototype = {
 		recruiters: [],
@@ -73,7 +73,7 @@ define(['jquery', 'underscore', 'libs/text!templates/meetOurTeam.html'], functio
 		render: function() {
 			this.loadTestData();
 
-			this.el.html(_.template(teamHTML, {
+			this.el.html(JST['src/js/templates/meetOurTeam.html']({
 				recruiters: this.recruiters
 			}));
 
