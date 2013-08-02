@@ -1,4 +1,9 @@
 $fergBlue: #015480;
+$redText: #c10e2e;
+$greenText: #7fbd02;
+$blueText: #00a4e1;
+$orangeText: #fea41a;
+$grayText: #828385;
 
 html {
 	font-family: arial, sans-serif;
@@ -7,123 +12,153 @@ html {
 	>body {
 		position: relative;
 		margin: 0;
-		width: 800px;
 		background: #f6f6f6;
 
-		@mixin clearfix {
-			content: " ";
-			display: table;
-			clear: both;
-		}
+		>#wrapper {
+			width: 800px;
 
-		a {
-			cursor: pointer;
-			outline: none;
-		}
-
-		>header {
-			height: 47px;
-			background: $fergBlue url(../img/logo.png) no-repeat 0 0;
-			overflow: hidden;
-			padding-right: 15px;
-
-			&:after {
-				@include clearfix;
+			@mixin clearfix {
+				content: " ";
+				display: table;
+				clear: both;
 			}
 
-			>p {
-				color: #fff;
-				margin: 0 7px 0 0;
+			a {
+				cursor: pointer;
+				outline: none;
+			}
+
+			.greenText { color: $greenText; }
+			.orangeText { color: $orangeText; }
+			.blueText { color: $blueText; }
+			.redText { color: $redText; }
+
+			>header {
 				height: 47px;
-				line-height: 47px;
-				float: right;
-			}
+				background: $fergBlue url(../img/logo.png) no-repeat 0 0;
+				overflow: hidden;
+				padding-right: 15px;
 
-			>a {
-				float: right;
-				margin: 13px 0 0 6px;
-				height: 20px;
-				width: 20px;
-				background: url(../img/social-media-icons.png) no-repeat 0 0;
-
-				&:hover { background-position: -20px 0; }
-
-				>span { display: none; }
-
-				&#instagram { 
-					background-position: 0 -60px;
-					&:hover { background-position: -20px -60px; }
+				&:after {
+					@include clearfix;
 				}
 
-				&#foursquare { 
-					background-position: 0 -20px;
-					&:hover { background-position: -20px -20px; }
-				}
-
-				&#linkedin { 
-					background-position: 0 -40px;
-					&:hover { background-position: -20px -40px; }
-				}
-			}
-		}
-
-		>div {
-			>#youtube {
-				>img {
-					cursor: pointer;
-				}
-			}
-
-			>#meet-our-team {
-				>div {
-					position: relative;
-					width: 200px;
-					height: 265px;
-					overflow: hidden;
-
-					>#slider {
-						position: absolute;
-						left: 0;
-						top: 20px;
-
-						&:after {
-							content: " ";
-							display: table;
-							clear: both;
-						}
-
-						>div {
-							float: left;
-							width: 160px;
-							padding: 15px 20px;
-							text-align: center;
-						}
-					}
+				>p {
+					color: #fff;
+					margin: 0 7px 0 0;
+					height: 47px;
+					line-height: 47px;
+					float: right;
 				}
 
 				>a {
-					display: block;
-					float: left;
+					float: right;
+					margin: 13px 0 0 6px;
 					height: 20px;
-					width: 25px;
-					background: #036;
-					cursor: pointer;
+					width: 20px;
+					background: url(../img/social-media-icons.png) no-repeat 0 0;
 
-					&:hover { background: #369; }
-					&:active { background: #333; }
-
-					&.disabled {
-						background: #ccc;
-						cursor: default;
-					}
+					&:hover { background-position: -20px 0; }
 
 					>span { display: none; }
+
+					&#instagram { 
+						background-position: 0 -60px;
+						&:hover { background-position: -20px -60px; }
+					}
+
+					&#foursquare { 
+						background-position: 0 -20px;
+						&:hover { background-position: -20px -20px; }
+					}
+
+					&#linkedin { 
+						background-position: 0 -40px;
+						&:hover { background-position: -20px -40px; }
+					}
 				}
 			}
-		}
 
-		>footer {
+			>section#intro {
+				padding: 40px 40px 15px 15px;
+				background: #f4f4f4;
 
+				&:after { @include clearfix; }
+
+				>p#youtube {
+					margin: 0;
+					float: right;
+
+					>img {
+						cursor: pointer;
+						border: 0;
+					}
+				}
+
+				>h3, >h1 {
+					margin: 0;
+					color: $grayText;
+					font-weight: normal;
+				}
+				>h3 {
+
+				}
+				>h1 {
+
+				}
+			}
+			>div {
+				>#meet-our-team {
+					>div {
+						position: relative;
+						width: 200px;
+						height: 265px;
+						overflow: hidden;
+
+						>#slider {
+							position: absolute;
+							left: 0;
+							top: 20px;
+
+							&:after {
+								content: " ";
+								display: table;
+								clear: both;
+							}
+
+							>div {
+								float: left;
+								width: 160px;
+								padding: 15px 20px;
+								text-align: center;
+							}
+						}
+					}
+
+					>a {
+						display: block;
+						float: left;
+						height: 20px;
+						width: 25px;
+						background: #036;
+						cursor: pointer;
+
+						&:hover { background: #369; }
+						&:active { background: #333; }
+
+						&.disabled {
+							background: #ccc;
+							cursor: default;
+						}
+
+						>span { display: none; }
+					}
+				}
+			}
+
+			>footer {
+
+			}
 		}
 
 		>#ytp-overlay {
