@@ -3,10 +3,49 @@ html {
   font-size: 13px; }
   html > body {
     position: relative;
-    margin: 0; }
+    margin: 0;
+    width: 800px;
+    background: #f6f6f6; }
+    html > body a {
+      cursor: pointer;
+      outline: none; }
     html > body > header {
       height: 47px;
-      background: #00567f url(../img/logo.png) no-repeat 0 0; }
+      background: #015480 url(../img/logo.png) no-repeat 0 0;
+      overflow: hidden;
+      padding-right: 15px; }
+      html > body > header:after {
+        content: " ";
+        display: table;
+        clear: both; }
+      html > body > header > p {
+        color: #fff;
+        margin: 0 7px 0 0;
+        height: 47px;
+        line-height: 47px;
+        float: right; }
+      html > body > header > a {
+        float: right;
+        margin: 13px 0 0 6px;
+        height: 20px;
+        width: 20px;
+        background: url(../img/social-media-icons.png) no-repeat 0 0; }
+        html > body > header > a:hover {
+          background-position: -20px 0; }
+        html > body > header > a > span {
+          display: none; }
+        html > body > header > a#instagram {
+          background-position: 0 -60px; }
+          html > body > header > a#instagram:hover {
+            background-position: -20px -60px; }
+        html > body > header > a#foursquare {
+          background-position: 0 -20px; }
+          html > body > header > a#foursquare:hover {
+            background-position: -20px -20px; }
+        html > body > header > a#linkedin {
+          background-position: 0 -40px; }
+          html > body > header > a#linkedin:hover {
+            background-position: -20px -40px; }
     html > body > div > #youtube > img {
       cursor: pointer; }
     html > body > div > #meet-our-team > div {

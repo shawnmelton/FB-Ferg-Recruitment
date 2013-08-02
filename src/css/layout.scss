@@ -1,4 +1,4 @@
-$fergBlue: #00567f;
+$fergBlue: #015480;
 
 html {
 	font-family: arial, sans-serif;
@@ -7,10 +7,64 @@ html {
 	>body {
 		position: relative;
 		margin: 0;
+		width: 800px;
+		background: #f6f6f6;
+
+		@mixin clearfix {
+			content: " ";
+			display: table;
+			clear: both;
+		}
+
+		a {
+			cursor: pointer;
+			outline: none;
+		}
 
 		>header {
 			height: 47px;
 			background: $fergBlue url(../img/logo.png) no-repeat 0 0;
+			overflow: hidden;
+			padding-right: 15px;
+
+			&:after {
+				@include clearfix;
+			}
+
+			>p {
+				color: #fff;
+				margin: 0 7px 0 0;
+				height: 47px;
+				line-height: 47px;
+				float: right;
+			}
+
+			>a {
+				float: right;
+				margin: 13px 0 0 6px;
+				height: 20px;
+				width: 20px;
+				background: url(../img/social-media-icons.png) no-repeat 0 0;
+
+				&:hover { background-position: -20px 0; }
+
+				>span { display: none; }
+
+				&#instagram { 
+					background-position: 0 -60px;
+					&:hover { background-position: -20px -60px; }
+				}
+
+				&#foursquare { 
+					background-position: 0 -20px;
+					&:hover { background-position: -20px -20px; }
+				}
+
+				&#linkedin { 
+					background-position: 0 -40px;
+					&:hover { background-position: -20px -40px; }
+				}
+			}
 		}
 
 		>div {
