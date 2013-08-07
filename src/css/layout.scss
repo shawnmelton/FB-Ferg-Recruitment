@@ -326,20 +326,34 @@ html {
 						>a {
 							display: block;
 							float: left;
-							height: 20px;
-							width: 25px;
-							background: #036;
+							height: 31px;
+							width: 30px;
 							cursor: pointer;
+							background-position: 0 0;
+							background-repeat: no-repeat;
 
-							&:hover { background: #369; }
-							&:active { background: #333; }
-
-							&.disabled {
-								background: #ccc;
+							&:hover { background-position: 0 -31px; }
+							&:active { background-position: 0 -62px; }
+							&.disabled { 
+								background-position: 0 -93px;
 								cursor: default;
 							}
 
+							&#slider-prev { 
+								background-image: url(../img/meet-our-team-previous.png);
+								margin-left: 56px;
+							}
+							&#slider-next { background-image: url(../img/meet-our-team-next.png); }
+
 							>span { display: none; }
+						}
+
+						>p {
+							margin: 0 13px;
+							background: #c10d30;
+							width: 2px;
+							height: 31px;
+							float: left;
 						}
 					}
 				}
