@@ -5,7 +5,7 @@ define(['jquery', 'templates/html.jst'], function($, htmlJST) {
 		el: $("#meet-our-team > div"),
 		slider: false,
 		currentIdx: 1,
-		stepWidth: 200,
+		stepWidth: 238,
 		animationSpeed: 600,
 		nextBtn: $("#slider-next"),
 		prevBtn: $("#slider-prev"),
@@ -37,14 +37,14 @@ define(['jquery', 'templates/html.jst'], function($, htmlJST) {
 				name: "John Doe",
 				title: "Lead Recruiter",
 				url: "/img/recruiter.png",
-				phone: "757.555.1234"
+				location: "Chesapeake, VA"
 			});
 
 			this.recruiters.push({
 				name: "Jane Doe",
 				title: "Junior Recruiter",
 				url: "/img/recruiter.png",
-				phone: "757.555.0987"
+				location: "Norfolk, VA"
 			});
 		},
 

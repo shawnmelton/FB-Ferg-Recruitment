@@ -10,8 +10,8 @@ html {
       html > body > #wrapper a {
         cursor: pointer;
         outline: none; }
-        html > body > #wrapper a > span {
-          display: none; }
+      html > body > #wrapper a > span, html > body > #wrapper h1 > span, html > body > #wrapper h2 > span, html > body > #wrapper h3 > span {
+        display: none; }
       html > body > #wrapper .upper {
         text-transform: uppercase; }
       html > body > #wrapper .greenText {
@@ -39,7 +39,7 @@ html {
           color: #fff;
           margin: 0 7px 0 0;
           height: 47px;
-          line-height: 55px;
+          line-height: 54px;
           font-size: 16px;
           float: right; }
         html > body > #wrapper > header > a {
@@ -98,8 +98,6 @@ html {
             height: 18px;
             width: 244px;
             background: url(../img/upcoming-events-heading.png) no-repeat 0 0; }
-            html > body > #wrapper > section#events > #events-list > h3 > span {
-              display: none; }
           html > body > #wrapper > section#events > #events-list > div {
             padding: 0 0 10px;
             background: url(../img/events-list-bottom.png) repeat-x bottom left; }
@@ -173,8 +171,6 @@ html {
             width: 275px;
             height: 19px;
             margin: 0 auto 25px; }
-            html > body > #wrapper > section#middle-content > div#openings > h2 > span {
-              display: none; }
           html > body > #wrapper > section#middle-content > div#openings > div {
             width: 720px;
             height: 160px;
@@ -198,8 +194,6 @@ html {
               width: 239px;
               height: 34px;
               margin-bottom: 23px; }
-              html > body > #wrapper > section#middle-content > div#three-columns > section > h3 > span {
-                display: none; }
           html > body > #wrapper > section#middle-content > div#three-columns > section#links {
             font-size: 14px; }
             html > body > #wrapper > section#middle-content > div#three-columns > section#links > h3 {
@@ -223,8 +217,9 @@ html {
             background: url(../img/meet-our-team-heading.png) no-repeat 0 0; }
           html > body > #wrapper > section#middle-content > div#three-columns > section#meet-our-team > div {
             position: relative;
-            width: 200px;
-            height: 265px;
+            width: 238px;
+            height: 218px;
+            margin-bottom: 22px;
             overflow: hidden; }
             html > body > #wrapper > section#middle-content > div#three-columns > section#meet-our-team > div > #slider {
               position: absolute;
@@ -236,9 +231,16 @@ html {
                 clear: both; }
               html > body > #wrapper > section#middle-content > div#three-columns > section#meet-our-team > div > #slider > div {
                 float: left;
-                width: 160px;
-                padding: 0 20px;
-                text-align: center; }
+                width: 238px; }
+                html > body > #wrapper > section#middle-content > div#three-columns > section#meet-our-team > div > #slider > div > img {
+                  display: block;
+                  width: 238px;
+                  height: 170px; }
+                html > body > #wrapper > section#middle-content > div#three-columns > section#meet-our-team > div > #slider > div > h4 {
+                  margin: 10px 0 0;
+                  font-family: arial, sans-serif;
+                  font-size: 14px;
+                  color: #00567f; }
           html > body > #wrapper > section#middle-content > div#three-columns > section#meet-our-team > a {
             display: block;
             float: left;
@@ -259,8 +261,6 @@ html {
               margin-left: 56px; }
             html > body > #wrapper > section#middle-content > div#three-columns > section#meet-our-team > a#slider-next {
               background-image: url(../img/meet-our-team-next.png); }
-            html > body > #wrapper > section#middle-content > div#three-columns > section#meet-our-team > a > span {
-              display: none; }
           html > body > #wrapper > section#middle-content > div#three-columns > section#meet-our-team > p {
             margin: 0 13px;
             background: #c10d30;
@@ -270,7 +270,58 @@ html {
       html > body > #wrapper > footer {
         border-top: 3px solid #fea41a;
         background: #015480;
-        min-height: 200px; }
+        padding: 20px; }
+        html > body > #wrapper > footer:after {
+          @inclue clearfix; }
+        html > body > #wrapper > footer > h2 {
+          margin: 82px 0 0 30px;
+          height: 60px;
+          width: 242px;
+          float: right;
+          background: url(../img/your-potential-with-ferguson-heading.png) no-repeat 0 0; }
+        html > body > #wrapper > footer > h3 {
+          margin: 12px 0 18px;
+          width: 189px;
+          height: 18px;
+          background: url(../img/find-out-more-heading.png) no-repeat 0 0; }
+        html > body > #wrapper > footer > p {
+          color: #fff;
+          font-size: 14px;
+          font-family: times, sans-serif; }
+        html > body > #wrapper > footer > a {
+          display: block;
+          margin-left: 135px;
+          width: 178px;
+          height: 34px;
+          margin-top: 20px;
+          background: url(../img/learn-more-button.png) no-repeat 0 0; }
+          html > body > #wrapper > footer > a:hover {
+            background-position: 0 -34px; }
+          html > body > #wrapper > footer > a:active {
+            background-position: 0 -68px; }
+        html > body > #wrapper > footer > div {
+          margin-top: 30px;
+          padding-top: 30px;
+          border-top: 1px solid #fff; }
+          html > body > #wrapper > footer > div > a {
+            display: block;
+            height: 17px;
+            width: 165px;
+            background: url(../img/visit-us-at-ferguson-heading.png) no-repeat 0 0; }
+          html > body > #wrapper > footer > div > p {
+            margin: 0;
+            height: 17px;
+            line-height: 17px;
+            float: right;
+            color: #fff;
+            font-family: arial, sans-serif;
+            font-size: 9px; }
+            html > body > #wrapper > footer > div > p > a {
+              color: #fff;
+              text-decoration: none;
+              font-weight: bold; }
+              html > body > #wrapper > footer > div > p > a:hover {
+                text-decoration: underline; }
     html > body > #ytp-overlay {
       display: none;
       margin: 0;

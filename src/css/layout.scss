@@ -28,7 +28,9 @@ html {
 			a {
 				cursor: pointer;
 				outline: none;
+			}
 
+			a, h1, h2, h3 {
 				>span { display: none; }
 			}
 
@@ -64,7 +66,7 @@ html {
 					color: #fff;
 					margin: 0 7px 0 0;
 					height: 47px;
-					line-height: 55px;
+					line-height: 54px;
 					font-size: $baseFontSize + 3;
 					float: right;
 				}
@@ -135,8 +137,6 @@ html {
 						height: 18px;
 						width: 244px;
 						background: url(../img/upcoming-events-heading.png) no-repeat 0 0;
-
-						>span { display: none; }
 					}
 					
 					>div {
@@ -231,8 +231,6 @@ html {
 						width: 275px;
 						height: 19px;
 						margin: 0 auto 25px;
-
-						>span { display: none; }
 					}
 
 					>div {
@@ -261,8 +259,6 @@ html {
 							width: 239px;
 							height: 34px;
 							margin-bottom: 23px;
-
-							>span { display: none; }
 						}
 					}
 
@@ -299,8 +295,9 @@ html {
 
 						>div {
 							position: relative;
-							width: 200px;
-							height: 265px;
+							width: 238px;
+							height: 218px;
+							margin-bottom: 22px;
 							overflow: hidden;
 
 							>#slider {
@@ -308,17 +305,24 @@ html {
 								left: 0;
 								top: 0;
 
-								&:after {
-									content: " ";
-									display: table;
-									clear: both;
-								}
+								&:after { @include clearfix; }
 
 								>div {
 									float: left;
-									width: 160px;
-									padding: 0 20px;
-									text-align: center;
+									width: 238px;
+
+									>img {
+										display: block;
+										width: 238px;
+										height: 170px;
+									}
+
+									>h4 {
+										margin: 10px 0 0;
+										font-family: arial, sans-serif;
+										font-size: 14px;
+										color: $darkBlueText;
+									}
 								}
 							}
 						}
@@ -344,8 +348,6 @@ html {
 								margin-left: 56px;
 							}
 							&#slider-next { background-image: url(../img/meet-our-team-next.png); }
-
-							>span { display: none; }
 						}
 
 						>p {
@@ -363,7 +365,73 @@ html {
 			>footer {
 				border-top: 3px solid $orangeText;
 				background: $fergBlue;
-				min-height: 200px;
+				padding: 20px;
+
+				&:after { @inclue clearfix; }
+
+				>h2 {
+					margin: 82px 0 0 30px;
+					height: 60px;
+					width: 242px;
+					float: right;
+					background: url(../img/your-potential-with-ferguson-heading.png) no-repeat 0 0;
+				}
+
+				>h3 {
+					margin: 12px 0 18px;
+					width: 189px;
+					height: 18px;
+					background: url(../img/find-out-more-heading.png) no-repeat 0 0;
+				}
+
+				>p {
+					color: #fff;
+					font-size: $baseFontSize + 1;
+					font-family: times, sans-serif;
+				}
+
+				>a {
+					display: block;
+					margin-left: 135px;
+					width: 178px;
+					height: 34px;
+					margin-top: 20px;
+					background: url(../img/learn-more-button.png) no-repeat 0 0;
+
+					&:hover { background-position: 0 -34px; }
+					&:active { background-position: 0 -68px; }
+				}
+
+				>div {
+					margin-top: 30px;
+					padding-top: 30px;
+					border-top: 1px solid #fff;
+
+					>a {
+						display: block;
+						height: 17px;
+						width: 165px;
+						background: url(../img/visit-us-at-ferguson-heading.png) no-repeat 0 0;
+					}
+
+					>p {
+						margin: 0;
+						height: 17px;
+						line-height: 17px;
+						float: right;
+						color: #fff;
+						font-family: arial, sans-serif;
+						font-size: $baseFontSize - 4;
+
+						>a {
+							color: #fff;
+							text-decoration: none;
+							font-weight: bold;
+
+							&:hover { text-decoration: underline; }
+						}
+					}
+				}
 			}
 		}
 
