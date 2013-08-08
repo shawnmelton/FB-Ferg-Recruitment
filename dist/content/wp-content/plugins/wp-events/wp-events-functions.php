@@ -464,6 +464,7 @@ function events_clear_old() {
  Return:    -none-
 -------------------------------------------------------------*/
 function events_credits() {
+	return;
 	echo '<table class="widefat" style="margin-top: .5em">';
 	
 	echo '<thead>';

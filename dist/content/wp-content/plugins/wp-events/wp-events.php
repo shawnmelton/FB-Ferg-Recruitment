@@ -379,7 +379,7 @@ function events_schedule() {
 					</table>
 	
 					<br class="clear" />
-					<div id="poststuff">
+					<div id="poststuff" style="display: none;">
 						<?php the_editor($edit_event->pre_message, 'content', 'events_allday', false, 4); ?>
 					</div>
 	
@@ -394,7 +394,7 @@ function events_schedule() {
 	
 				      	<tbody>
 				      	<tr>
-					        <th scope="row"><?php _e('Startdate', 'wpevents'); ?> <?php _e('Day', 'wpevents'); ?>/<?php _e('Month', 'wpevents'); ?>/<?php _e('Year', 'wpevents'); ?>:</th>
+					        <th scope="row"><?php _e('Start', 'wpevents'); ?> <?php _e('Day', 'wpevents'); ?>/<?php _e('Month', 'wpevents'); ?>/<?php _e('Year', 'wpevents'); ?>:</th>
 					        <td width="25%">
 					        	<input id="title" name="events_sday" class="search-input" type="text" size="4" maxlength="2" value="<?php echo $sday;?>" tabindex="5" /> /
 								<select name="events_smonth" tabindex="6">
@@ -504,7 +504,7 @@ function events_schedule() {
 						</select></td>
 				      	</tr>
 				      	<tr>
-					        <th scope="row"><?php _e('Enddate', 'wpevents'); ?> <?php _e('Day', 'wpevents'); ?>/<?php _e('Month', 'wpevents'); ?>/<?php _e('Year', 'wpevents'); ?> (<?php _e('optional', 'wpevents'); ?>):</th>
+					        <th scope="row"><?php _e('End', 'wpevents'); ?> <?php _e('Day', 'wpevents'); ?>/<?php _e('Month', 'wpevents'); ?>/<?php _e('Year', 'wpevents'); ?> (<?php _e('optional', 'wpevents'); ?>):</th>
 					        <td width="25%">
 					        	<input id="title" name="events_eday" class="search-input" type="text" size="4" maxlength="2" value="<?php echo $eday;?>" tabindex="9" /> /
 								<select name="events_emonth" tabindex="10">
@@ -616,7 +616,7 @@ function events_schedule() {
 						</select></td>
 				      	</tr>
 		      			<?php if(!$event_edit_id) { ?>
-				      	<tr>
+				      	<tr style="display: none;">
 					        <th scope="row"><?php _e('Repeat', 'wpevents'); ?> (<?php _e('optional', 'wpevents'); ?>):</th>
 					        <td width="30%"><select name="events_repeat_every" tabindex="14">
 								<option value=""><?php _e('Don\'t repeat', 'wpevents'); ?></option>
@@ -661,7 +661,7 @@ function events_schedule() {
 					    	<?php } ?>
 					    	</select></td>
 				      	</tr>
-				      	<tr>
+				      	<tr style="display: none;">
 					        <th scope="row"><?php _e('Show in the sidebar', 'wpevents'); ?>:</th>
 					        <td width="25%"><select name="events_priority" tabindex="18">
 							<?php if($edit_event->priority == "yes" OR $edit_event->priority == "") { ?>
@@ -683,7 +683,7 @@ function events_schedule() {
 							<?php } ?>
 							</select></td>
 						</tr>
-				      	<tr>
+				      	<tr style="display: none;">
 					        <th scope="row"><?php _e('Message when event ends', 'wpevents'); ?> (<?php _e('optional', 'wpevents'); ?>):</th>
 					        <td colspan="3"><textarea name="events_post_event" class="search-input" cols="65" rows="2" tabindex="20"><?php echo $edit_event->post_message;?></textarea><br />
 					        	<em><?php echo sprintf(__('Maximum %s characters.', 'wpevents'), $events_config['length']); ?> <?php _e('HTML allowed', 'wpevents'); ?>.</em></td>
