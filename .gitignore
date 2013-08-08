@@ -214,8 +214,9 @@ pip-log.txt
 .mr.developer.cfg
 
 # Wordpress
-content/wp-content/uploads/*
-content/wp-config.php
+dist/content/wp-content/uploads/*
+dist/content/wp-config.php
+dist/content/*.txt
 
 # SASS
 dist/css/.sass-cache
