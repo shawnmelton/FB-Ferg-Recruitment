@@ -333,7 +333,48 @@ class JSON_API_Core_Controller {
       'posts' => $posts
     );
   }
-  
-}
 
   /**
+  * Retrieve all of the events in the system.
+  * Allow the user to order them based on request
+  */
+  public function get_events() {
+    global $wpdb;
+
+    /**
+     * Allow user to edit order that items are displayed.
+     */
+    $field = isset($_GET['field']) ? strtolower($_GET['field']) : false;
+    if(!in_array($field, array('location', 'title', 'thetime'))) {
+      $field = false;
+    }
+
+    $dir = isset($_GET['dir']) ? strtolower($_GET['dir']) : false;
+    if(!in_array($dir, array('asc', 'desc'))) {
+      $dir = false;
+    }
+
+    if($field === false || $dir === false) {
+      $order = 'thetime ASC';
+    } else {
+      $order = $field .' '. $dir;
+    }
+
+    $events = array();
+    try {
+      $results = $wpdb->get_results("SELECT * FROM `". $wpdb->prefix ."events` ORDER BY {$order}");
+      if ($results) {
+        foreach($results as $index => $event) {
+          $events[] = array(
+            'title' => $event->title,
+            'location' => $event->location,
+            'date' => date('m/d/Y', $event->thetime),
+            'class' => ($index % 2 == 0) ? ' class="odd"' : ''
+          );
+        }
+      }
+    } catch(Exception $e) {}
+
+    return array('events' => $events);
+  }
+}
