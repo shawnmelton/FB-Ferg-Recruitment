@@ -56,12 +56,12 @@ function events_widget_sidebar_init() {
 function events_widget_dashboard_init() {
 	global $events_config;
 
-	if(current_user_can($events_config['addlevel'])) {
+	/*if(current_user_can($events_config['addlevel'])) {
 		wp_add_dashboard_widget( 'events_schedule_widget', __('Events', 'wpevents'), 'events_widget_dashboard' );
 	}
 	if(current_user_can('manage_options')) {
 		wp_add_dashboard_widget('meandmymac_rss_widget', __('Meandmymac.net RSS Feed', 'wpevents'), 'meandmymac_rss_widget');
-	}
+	}*/
 }
 
 /*-------------------------------------------------------------

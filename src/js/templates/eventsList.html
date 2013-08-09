@@ -1,0 +1,9 @@
+<table id="events-list-table">
+	<% _.each(events, function(event) { %>
+	<tr<%= event.class %>>
+		<td width="40%"><%= event.location %></td>
+		<td width="35%"><%= event.title %></td>
+		<td width="25%"><%= event.date %></td>
+	</tr>
+	<% }); %>
+</table>

@@ -116,8 +116,7 @@ function events_manage() {
 					<th scope="col" class="check-column">&nbsp;</th>
 					<th scope="col" width="15%"><?php _e('Date', 'wpevents'); ?></th>
 					<th scope="col"><?php _e('Title', 'wpevents'); ?></th>
-					<th scope="col" width="10%"><?php _e('Category', 'wpevents'); ?></th>
-					<th scope="col" width="20%"><?php _e('Starts when', 'wpevents'); ?></th>
+					<th scope="col" width="10%"><?php _e('Location', 'wpevents'); ?></th>
 				</tr>
   			</thead>
   			<tbody>
@@ -126,22 +125,20 @@ function events_manage() {
 			$events = $wpdb->get_results("SELECT * FROM `".$wpdb->prefix."events` ORDER BY $order");
 			if ($events) {
 				foreach($events as $event) {
-					$cat = $wpdb->get_row("SELECT name FROM " . $wpdb->prefix . "events_categories WHERE id = '".$event->category."'");
 					$class = ('alternate' != $class) ? 'alternate' : ''; ?>
 				    <tr id='event-<?php echo $event->id; ?>' class=' <?php echo $class; ?>'>
 						<th scope="row" class="check-column"><input type="checkbox" name="eventcheck[]" value="<?php echo $event->id; ?>" /></th>
-						<td><?php echo gmdate('d-m-Y H:i', $event->thetime);?></td>
+						<td><?php echo gmdate('F j, Y', $event->thetime);?></td>
 						<td><strong><a class="row-title" href="<?php echo get_option('siteurl').'/wp-admin/admin.php?page=wp-events2&amp;edit_event='.$event->id;?>" title="<?php _e('Edit', 'wpevents'); ?>"><?php echo stripslashes(html_entity_decode($event->title));?></a></strong></td>
-						<td><?php echo $cat->name; ?></td>
-						<td><?php echo events_countdown($event->thetime, $event->theend, $event->post_message, $event->allday); ?></td>
+						<td><?php echo $event->location; ?></td>
 					</tr>
 	 			<?php } ?>
 	 		<?php } else { ?>
-				<tr id='no-id'><td scope="row" colspan="5"><em><?php _e('No Events yet!', 'wpevents'); ?></em></td></tr>
+				<tr id='no-id'><td scope="row" colspan="4"><em><?php _e('No Events yet!', 'wpevents'); ?></em></td></tr>
 			<?php 
 			}
 		} else { ?>
-			<tr id='no-id'><td scope="row" colspan="5"><span style="font-weight: bold; color: #f00;"><?php _e('There was an error locating the main database table for Events.', 'wpevents'); _e('Please deactivate and re-activate Events from the plugin page!!', 'wpevents'); ?><br /><?php echo sprintf(__('If this does not solve the issue please seek support at <a href="%s">%s</a>.', 'wpevents'), 'http://meandmymac.net/support/', 'http://meandmymac.net/support/'); ?></span></td></tr>
+			<tr id='no-id'><td scope="row" colspan="4"><span style="font-weight: bold; color: #f00;"><?php _e('There was an error locating the main database table for Events.', 'wpevents'); _e('Please deactivate and re-activate Events from the plugin page!!', 'wpevents'); ?><br /><?php echo sprintf(__('If this does not solve the issue please seek support at <a href="%s">%s</a>.', 'wpevents'), 'http://meandmymac.net/support/', 'http://meandmymac.net/support/'); ?></span></td></tr>
 
 		<?php }	?>
 			</tbody>
@@ -359,45 +356,24 @@ function events_schedule() {
 					<?php if($event_edit_id) { ?>
 			    	<input type="hidden" name="events_repeat_int" value="0" />
 					<?php } ?>
-			
-			    	<table class="widefat" style="margin-top: .5em">
 	
-						<thead>
-						<tr valign="top" id="quicktags">
-							<td colspan="3"><?php _e('Enter your event details below.', 'wpevents'); ?></td>
-						</tr>
-				      	</thead>
-	
-				      	<tbody>
-				      	<tr>
-					        <th scope="row"><?php _e('Title', 'wpevents'); ?>:</th>
-					        <td><input name="events_title" class="search-input" type="text" size="55" maxlength="<?php echo $events_config['length'];?>" value="<?php echo $edit_event->title;?>" tabindex="1" autocomplete="off" /><br /><em><?php echo sprintf(__('Maximum %s characters.', 'wpevents'), $events_config['length']); ?></em></td>
-					        <td width="35%"><input type="checkbox" name="events_title_link" <?php if($edit_event->title_link == 'Y') { ?>checked="checked" <?php } ?> tabindex="2" /> <?php _e('Make title a link.', 'wpevents');?> <?php _e('Use the field below.', 'wpevents'); ?><br /><input type="checkbox" name="events_allday" <?php if($edit_event->allday == 'Y') { ?>checked="checked" <?php } ?> tabindex="3" /> <?php _e('All-day event.', 'wpevents'); ?></td>
-						</tr>
-						</tbody>
-	
-					</table>
-	
-					<br class="clear" />
 					<div id="poststuff" style="display: none;">
 						<?php the_editor($edit_event->pre_message, 'content', 'events_allday', false, 4); ?>
 					</div>
 	
 					<br class="clear" />
-			    	<table class="widefat" style="margin-top: .5em">
-	
-						<thead>
-						<tr valign="top" id="quicktags">
-							<td colspan="4"><?php _e('Please note that the time field uses a 24 hour clock. This means that 22:00 hour is actually 10:00pm.', 'wpevents'); ?><br /><?php _e('Hint: If you\'re used to the AM/PM system and the event takes place/starts after lunch just add 12 hours.', 'wpevents'); ?></td>
-						</tr>
-				      	</thead>
-	
+			    	<table class="widefat">
 				      	<tbody>
+				      	<tr>
+					        <th scope="row" width="20%"><?php _e('Title', 'wpevents'); ?>:</th>
+					        <td><input name="events_title" class="search-input" type="text" size="55" maxlength="<?php echo $events_config['length'];?>" value="<?php echo $edit_event->title;?>" tabindex="1" autocomplete="off" /><br /><em><?php echo sprintf(__('Maximum %s characters.', 'wpevents'), $events_config['length']); ?></em></td>
+					      	<td colspan="2">&nbsp;</td>
+					      	<!--<td width="35%"><input type="checkbox" name="events_title_link" <?php if($edit_event->title_link == 'Y') { ?>checked="checked" <?php } ?> tabindex="2" /> <?php _e('Make title a link.', 'wpevents');?> <?php _e('Use the field below.', 'wpevents'); ?><br /><input type="checkbox" name="events_allday" <?php if($edit_event->allday == 'Y') { ?>checked="checked" <?php } ?> tabindex="3" /> <?php _e('All-day event.', 'wpevents'); ?></td>-->
+						</tr>
 				      	<tr>
 					        <th scope="row"><?php _e('Start', 'wpevents'); ?> <?php _e('Day', 'wpevents'); ?>/<?php _e('Month', 'wpevents'); ?>/<?php _e('Year', 'wpevents'); ?>:</th>
 					        <td width="25%">
-					        	<input id="title" name="events_sday" class="search-input" type="text" size="4" maxlength="2" value="<?php echo $sday;?>" tabindex="5" /> /
-								<select name="events_smonth" tabindex="6">
+								<select name="events_smonth" tabindex="5">
 									<option value="01" <?php if($smonth == "01") { echo 'selected'; } ?>><?php _e('January'); ?></option>
 									<option value="02" <?php if($smonth == "02") { echo 'selected'; } ?>><?php _e('February'); ?></option>
 									<option value="03" <?php if($smonth == "03") { echo 'selected'; } ?>><?php _e('March'); ?></option>
@@ -411,10 +387,11 @@ function events_schedule() {
 									<option value="11" <?php if($smonth == "11") { echo 'selected'; } ?>><?php _e('November'); ?></option>
 									<option value="12" <?php if($smonth == "12") { echo 'selected'; } ?>><?php _e('December'); ?></option>
 								</select> /
+								<input id="title" name="events_sday" class="search-input" type="text" size="4" maxlength="2" value="<?php echo $sday;?>" tabindex="6" /> /
 								<input name="events_syear" class="search-input" type="text" size="4" maxlength="4" value="<?php echo $syear;?>" tabindex="6" />
 							</td>
-					        <th scope="row"><?php _e('Hour', 'wpevents'); ?>/<?php _e('Minutes', 'wpevents'); ?> (<?php _e('optional', 'wpevents'); ?>):</th>
-					        <td width="25%"><select name="events_shour" tabindex="7">
+					        <th scope="row">&nbsp;</th>
+					        <td width="25%"><select name="events_shour" tabindex="7" style="display: none;">
 					        <option value="00" <?php if($shour == "00") { echo 'selected'; } ?>>00</option>
 					        <option value="01" <?php if($shour == "01") { echo 'selected'; } ?>>01</option>
 					        <option value="02" <?php if($shour == "02") { echo 'selected'; } ?>>02</option>
@@ -439,7 +416,7 @@ function events_schedule() {
 					        <option value="21" <?php if($shour == "21") { echo 'selected'; } ?>>21</option>
 					        <option value="22" <?php if($shour == "22") { echo 'selected'; } ?>>22</option>
 					        <option value="23" <?php if($shour == "23") { echo 'selected'; } ?>>23</option>
-						</select> / <select name="events_sminute" tabindex="8">
+						</select> <select name="events_sminute" tabindex="8" style="display: none;">
 					        <option value="00" <?php if($sminute == "00") { echo 'selected'; } ?>>00</option>
 					        <option value="01" <?php if($sminute == "01") { echo 'selected'; } ?>>01</option>
 					        <option value="02" <?php if($sminute == "02") { echo 'selected'; } ?>>02</option>
@@ -506,8 +483,7 @@ function events_schedule() {
 				      	<tr>
 					        <th scope="row"><?php _e('End', 'wpevents'); ?> <?php _e('Day', 'wpevents'); ?>/<?php _e('Month', 'wpevents'); ?>/<?php _e('Year', 'wpevents'); ?> (<?php _e('optional', 'wpevents'); ?>):</th>
 					        <td width="25%">
-					        	<input id="title" name="events_eday" class="search-input" type="text" size="4" maxlength="2" value="<?php echo $eday;?>" tabindex="9" /> /
-								<select name="events_emonth" tabindex="10">
+								<select name="events_emonth" tabindex="9">
 									<option value="" <?php if($emonth == "") { echo 'selected'; } ?>>--</option>
 									<option value="01" <?php if($emonth == "01") { echo 'selected'; } ?>><?php _e('January'); ?></option>
 									<option value="02" <?php if($emonth == "02") { echo 'selected'; } ?>><?php _e('February'); ?></option>
@@ -522,9 +498,10 @@ function events_schedule() {
 									<option value="11" <?php if($emonth == "11") { echo 'selected'; } ?>><?php _e('November'); ?></option>
 										<option value="12" <?php if($emonth == "12") { echo 'selected'; } ?>><?php _e('December'); ?></option>
 								</select> /
+								<input id="title" name="events_eday" class="search-input" type="text" size="4" maxlength="2" value="<?php echo $eday;?>" tabindex="10" /> /
 								<input name="events_eyear" class="search-input" type="text" size="4" maxlength="4" value="<?php echo $eyear;?>" tabindex="11"/></td>
-					        <th scope="row"><?php _e('Hour', 'wpevents'); ?>/<?php _e('Minutes', 'wpevents'); ?> (<?php _e('optional', 'wpevents'); ?>):</th>
-					        <td width="25%"><select name="events_ehour" tabindex="12">
+					        <th scope="row">&nbsp;</th>
+					        <td width="25%"><select name="events_ehour" tabindex="12" style="display: none;">
 					        <option value="" <?php if($ehour == "") { echo 'selected'; } ?>>--</option>
 					        <option value="00" <?php if($ehour == "00") { echo 'selected'; } ?>>00</option>
 					        <option value="01" <?php if($ehour == "01") { echo 'selected'; } ?>>01</option>
@@ -550,7 +527,7 @@ function events_schedule() {
 					        <option value="21" <?php if($ehour == "21") { echo 'selected'; } ?>>21</option>
 					        <option value="22" <?php if($ehour == "22") { echo 'selected'; } ?>>22</option>
 					        <option value="23" <?php if($ehour == "23") { echo 'selected'; } ?>>23</option>
-						</select> / <select name="events_eminute" tabindex="13">
+						</select> <select name="events_eminute" tabindex="13" style="display: none;">
 					        <option value="" <?php if($eminute == "") { echo 'selected'; } ?>>--</option>
 					        <option value="00" <?php if($eminute == "00") { echo 'selected'; } ?>>00</option>
 					        <option value="01" <?php if($eminute == "01") { echo 'selected'; } ?>>01</option>
@@ -652,9 +629,9 @@ function events_schedule() {
 				      	</tr>
 				      	<?php } ?>
 				      	<tr>
-					        <th scope="row"><?php _e('Location', 'wpevents'); ?> (<?php _e('optional', 'wpevents'); ?>):</th>
+					        <th scope="row"><?php _e('Location', 'wpevents'); ?> (<?php _e('College/University', 'wpevents'); ?>):</th>
 					        <td width="30%"><input name="events_location" class="search-input" type="text" size="25" maxlength="255" value="<?php echo $edit_event->location;?>" tabindex="16" /><br /><em><?php _e('Maximum 255 characters.', 'wpevents'); ?></em></td>
-					        <th scope="row"><?php _e('Category', 'wpevents'); ?>:</th>
+					        <th scope="row" style="text-align: right;"><?php _e('Category', 'wpevents'); ?>: &nbsp; </th>
 					        <td width="30%" valign="top"><select name='events_category' id='cat' class='postform' tabindex="17">
 							<?php foreach($categories as $category) { ?>
 							    <option value="<?php echo $category->id; ?>" <?php if($category->id == $edit_event->category) { echo 'selected'; } ?>><?php echo $category->name; ?></option>

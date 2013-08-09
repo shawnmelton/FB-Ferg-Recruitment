@@ -138,20 +138,49 @@ html {
 						width: 244px;
 						background: url(../img/upcoming-events-heading.png) no-repeat 0 0;
 					}
+
+					table {
+						font-family: arial;
+						font-size: $baseFontSize + 2;
+						border-collapse: collapse;
+						width: 380px;
+
+						th {
+							font-weight: bold;
+							padding: 7px 7px 15px;
+							text-align: left;
+							cursor: pointer;
+							background-position: 85% 40%;
+							background-repeat: no-repeat;
+
+							&.asc { background-image: url(../img/ascending-arrow.png); }
+							&.desc { background-image: url(../img/descending-arrow.png); }
+
+							&:first-child { background-position: 100% 40%; }
+						}
+					}
 					
 					>div {
+						position: relative;
 						padding: 0 0 10px;
 						background: url(../img/events-list-bottom.png) repeat-x bottom left;
+						height: 270px;
+						overflow: hidden;
+
+						>p {
+							position: absolute;
+							top: 0;
+							bottom: 0;
+							left: 0;
+							right: 0;
+							background: url(../img/events-loading.gif) no-repeat center center;
+							margin: 0;
+						}
 
 						>table {
-							font-family: arial;
-							font-size: $baseFontSize + 2;
-							border-collapse: collapse;
-
-							th {
-								font-weight: bold;
-								padding: 7px 7px 15px;
-							}
+							position: absolute;
+							top: 0;
+							left: 0;
 
 							td {
 								padding: 7px;

@@ -2,14 +2,16 @@ define([
 	'jquery',
 	'underscore',
 	'backbone',
+	'tools/eventsList',
 	'tools/twitterFeed',
 	'tools/recruitmentTeamSlider',
 	'tools/youTubePlayer'
-	], function($, _, Backbone, TwitterFeed, RecruitmentTeamSlider, YouTubePlayer){
+	], function($, _, Backbone, EventsList, TwitterFeed, RecruitmentTeamSlider, YouTubePlayer){
 		var defaultView = Backbone.View.extend({
 			el: "#content",
 
 			render: function(){
+				EventsList.init();
 				TwitterFeed.render();
 				RecruitmentTeamSlider.render();
 				YouTubePlayer.listen($("#youtube > img"));

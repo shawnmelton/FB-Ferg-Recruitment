@@ -98,16 +98,42 @@ html {
             height: 18px;
             width: 244px;
             background: url(../img/upcoming-events-heading.png) no-repeat 0 0; }
+          html > body > #wrapper > section#events > #events-list table {
+            font-family: arial;
+            font-size: 15px;
+            border-collapse: collapse;
+            width: 380px; }
+            html > body > #wrapper > section#events > #events-list table th {
+              font-weight: bold;
+              padding: 7px 7px 15px;
+              text-align: left;
+              cursor: pointer;
+              background-position: 85% 40%;
+              background-repeat: no-repeat; }
+              html > body > #wrapper > section#events > #events-list table th.asc {
+                background-image: url(../img/ascending-arrow.png); }
+              html > body > #wrapper > section#events > #events-list table th.desc {
+                background-image: url(../img/descending-arrow.png); }
+              html > body > #wrapper > section#events > #events-list table th:first-child {
+                background-position: 100% 40%; }
           html > body > #wrapper > section#events > #events-list > div {
+            position: relative;
             padding: 0 0 10px;
-            background: url(../img/events-list-bottom.png) repeat-x bottom left; }
+            background: url(../img/events-list-bottom.png) repeat-x bottom left;
+            height: 270px;
+            overflow: hidden; }
+            html > body > #wrapper > section#events > #events-list > div > p {
+              position: absolute;
+              top: 0;
+              bottom: 0;
+              left: 0;
+              right: 0;
+              background: url(../img/events-loading.gif) no-repeat center center;
+              margin: 0; }
             html > body > #wrapper > section#events > #events-list > div > table {
-              font-family: arial;
-              font-size: 15px;
-              border-collapse: collapse; }
-              html > body > #wrapper > section#events > #events-list > div > table th {
-                font-weight: bold;
-                padding: 7px 7px 15px; }
+              position: absolute;
+              top: 0;
+              left: 0; }
               html > body > #wrapper > section#events > #events-list > div > table td {
                 padding: 7px;
                 vertical-align: top; }
