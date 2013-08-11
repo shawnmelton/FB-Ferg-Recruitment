@@ -224,19 +224,21 @@ html {
             font-size: 14px; }
             html > body > #wrapper > section#middle-content > div#three-columns > section#links > h3 {
               background: url(../img/important-links-heading.png) no-repeat 0 0; }
-            html > body > #wrapper > section#middle-content > div#three-columns > section#links > article > h4 {
-              margin: 0 0 2px;
-              color: #00567f; }
-            html > body > #wrapper > section#middle-content > div#three-columns > section#links > article > p {
-              margin: 0; }
-            html > body > #wrapper > section#middle-content > div#three-columns > section#links > article > a {
-              font-weight: bold;
-              text-decoration: none;
-              color: #00567f;
-              font-size: 10px;
-              text-transform: uppercase; }
-              html > body > #wrapper > section#middle-content > div#three-columns > section#links > article > a:hover {
-                text-decoration: underline; }
+            html > body > #wrapper > section#middle-content > div#three-columns > section#links > article {
+              margin-bottom: 20px; }
+              html > body > #wrapper > section#middle-content > div#three-columns > section#links > article > h4 {
+                margin: 0 0 2px;
+                color: #00567f; }
+              html > body > #wrapper > section#middle-content > div#three-columns > section#links > article > p {
+                margin: 0; }
+              html > body > #wrapper > section#middle-content > div#three-columns > section#links > article > a {
+                font-weight: bold;
+                text-decoration: none;
+                color: #00567f;
+                font-size: 10px;
+                text-transform: uppercase; }
+                html > body > #wrapper > section#middle-content > div#three-columns > section#links > article > a:hover {
+                  text-decoration: underline; }
           html > body > #wrapper > section#middle-content > div#three-columns > section#twitter-feed > h3 {
             background: url(../img/twitter-feed-heading.png) no-repeat 0 0; }
           html > body > #wrapper > section#middle-content > div#three-columns > section#meet-our-team > h3 {

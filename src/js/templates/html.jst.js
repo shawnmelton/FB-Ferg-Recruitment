@@ -23,6 +23,27 @@ __p += '\n</table>';
 return __p
 };
 
+this["JST"]["src/js/templates/importantLinks.html"] = function(obj) {
+obj || (obj = {});
+var __t, __p = '', __e = _.escape, __j = Array.prototype.join;
+function print() { __p += __j.call(arguments, '') }
+with (obj) {
+
+ _.each(articles, function(article) { ;
+__p += '\n<article>\n\t<h4>' +
+((__t = ( article.title )) == null ? '' : __t) +
+'</h4>\n\t' +
+((__t = ( article.content )) == null ? '' : __t) +
+'\n\t<a href="' +
+((__t = ( article.url )) == null ? '' : __t) +
+'" target="_blank" class="upper">Learn More</a>\n</article>\n';
+ }); ;
+
+
+}
+return __p
+};
+
 this["JST"]["src/js/templates/meetOurTeam.html"] = function(obj) {
 obj || (obj = {});
 var __t, __p = '', __e = _.escape, __j = Array.prototype.join;
