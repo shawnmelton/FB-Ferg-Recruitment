@@ -1,0 +1,7 @@
+<% _.each(articles, function(article) { %>
+<article>
+	<h4><%= article.title %></h4>
+	<%= article.content %>
+	<a href="<%= article.url %>" target="_blank" class="upper">Learn More</a>
+</article>
+<% }); %>
