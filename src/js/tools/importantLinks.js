@@ -20,10 +20,6 @@ define(['jquery'], function($) {
 			});
 		},
 
-		/*clearLinks: function() {
-			this.el.find("article").remove();
-		},*/
-
 		init: function() {
 			this.build();
 		}

@@ -69,15 +69,25 @@ __p += '\n</div>';
 return __p
 };
 
-this["JST"]["src/js/templates/twitterFeed.html"] = function(obj) {
+this["JST"]["src/js/templates/oldTwitterFeed.html"] = function(obj) {
 obj || (obj = {});
 var __t, __p = '', __e = _.escape;
 with (obj) {
-__p += '<h3><span>Twitter Feed</span></h3>\n<a class="twitter-timeline" href="' +
+__p += '<a class="twitter-timeline" href="' +
 ((__t = ( url )) == null ? '' : __t) +
 '" data-widget-id="354403948402208768">Tweets by ' +
 ((__t = ( handle )) == null ? '' : __t) +
 '</a>\n<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?\'http\':\'https\';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>';
+
+}
+return __p
+};
+
+this["JST"]["src/js/templates/twitterFeed.html"] = function(obj) {
+obj || (obj = {});
+var __t, __p = '', __e = _.escape;
+with (obj) {
+__p += '';
 
 }
 return __p
