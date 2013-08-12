@@ -239,8 +239,30 @@ html {
                 text-transform: uppercase; }
                 html > body > #wrapper > section#middle-content > div#three-columns > section#links > article > a:hover {
                   text-decoration: underline; }
-          html > body > #wrapper > section#middle-content > div#three-columns > section#twitter-feed > h3 {
-            background: url(../img/twitter-feed-heading.png) no-repeat 0 0; }
+          html > body > #wrapper > section#middle-content > div#three-columns > section#twitter-feed {
+            min-height: 325px;
+            background: url(../img/twitter-loading.gif) no-repeat center center; }
+            html > body > #wrapper > section#middle-content > div#three-columns > section#twitter-feed.loaded {
+              background-image: none; }
+            html > body > #wrapper > section#middle-content > div#three-columns > section#twitter-feed > h3 {
+              background: url(../img/twitter-feed-heading.png) no-repeat 0 0; }
+            html > body > #wrapper > section#middle-content > div#three-columns > section#twitter-feed > p {
+              margin: 0 0 28px;
+              font-size: 14px;
+              font-family: arial, sans-serif; }
+              html > body > #wrapper > section#middle-content > div#three-columns > section#twitter-feed > p > small {
+                display: block;
+                margin-bottom: 7px;
+                font-size: 14px;
+                font-style: italic;
+                color: #999; }
+              html > body > #wrapper > section#middle-content > div#three-columns > section#twitter-feed > p > a, html > body > #wrapper > section#middle-content > div#three-columns > section#twitter-feed > p > strong {
+                color: #00567f; }
+              html > body > #wrapper > section#middle-content > div#three-columns > section#twitter-feed > p > a {
+                font-weight: bold;
+                text-decoration: none; }
+                html > body > #wrapper > section#middle-content > div#three-columns > section#twitter-feed > p > a:hover {
+                  text-decoration: underline; }
           html > body > #wrapper > section#middle-content > div#three-columns > section#meet-our-team > h3 {
             background: url(../img/meet-our-team-heading.png) no-repeat 0 0; }
           html > body > #wrapper > section#middle-content > div#three-columns > section#meet-our-team > div {
