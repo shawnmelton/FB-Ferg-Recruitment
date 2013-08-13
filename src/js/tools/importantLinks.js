@@ -1,4 +1,4 @@
-define(['jquery'], function($) {
+define(['jquery', 'tools/domain'], function($, Domain) {
 	var ImportantLinks = (function() {});
 	ImportantLinks.prototype = {
 		el: $("#links"),
@@ -8,7 +8,7 @@ define(['jquery'], function($) {
 		 */
 		build: function() {
 			var _this = this;
-			$.getJSON("/content/", {
+			$.getJSON(Domain.get() +"content/", {
 				json: "get_posts",
 				category_name: "important-link"
 			}, function(response) {

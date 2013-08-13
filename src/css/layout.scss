@@ -225,9 +225,9 @@ html {
 						margin: 20px 0 0;
 						float: left;
 						text-align: center;
-						width: 152px;
+						width: 158px;
 
-						&:first-child { margin-right: 30px; }
+						&:first-child { margin-right: 26px; }
 
 						>span {
 							display: block;
@@ -239,6 +239,7 @@ html {
 							display: block;
 							height: 34px;
 							width: 152px;
+							margin: 0 auto;
 							background: url(../img/apply-button.png) no-repeat 0 0;
 
 							&:hover { background-position: 0 -34px; }
@@ -354,7 +355,7 @@ html {
 						>div {
 							position: relative;
 							width: 238px;
-							height: 218px;
+							height: 230px;
 							margin-bottom: 22px;
 							overflow: hidden;
 
@@ -373,10 +374,12 @@ html {
 										display: block;
 										width: 238px;
 										height: 170px;
+										padding-bottom: 9px;
+										background: url(../img/meet-our-staff-shadow.png) no-repeat bottom center;
 									}
 
 									>h4 {
-										margin: 10px 0 0;
+										margin: 4px 0 0;
 										font-family: arial, sans-serif;
 										font-size: 14px;
 										color: $darkBlueText;
@@ -403,7 +406,7 @@ html {
 
 							&#slider-prev { 
 								background-image: url(../img/meet-our-team-previous.png);
-								margin-left: 56px;
+								margin-left: 75px;
 							}
 							&#slider-next { background-image: url(../img/meet-our-team-next.png); }
 						}
@@ -503,6 +506,7 @@ html {
 			right: 0;
 			background: #000;
 			opacity: 0.8;
+			filter: alpha(opacity=80);
 			cursor: pointer;
 		}
 

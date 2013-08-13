@@ -369,7 +369,7 @@ class JSON_API_Core_Controller {
             'title' => $event->title,
             'location' => $event->location,
             'date' => date('m/d/Y', $event->thetime),
-            'class' => ($index % 2 == 0) ? ' class="odd"' : ''
+            'cls' => ($index % 2 == 0) ? ' class="odd"' : ''
           );
         }
       }

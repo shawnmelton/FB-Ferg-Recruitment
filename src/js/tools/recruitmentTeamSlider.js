@@ -1,4 +1,4 @@
-define(['jquery', 'templates/html.jst'], function($, htmlJST) {
+define(['jquery', 'templates/html.jst', 'tools/domain'], function($, htmlJST, Domain) {
 	var RecruitmentTeamSlider = function() {};
 	RecruitmentTeamSlider.prototype = {
 		recruiters: [],
@@ -32,19 +32,33 @@ define(['jquery', 'templates/html.jst'], function($, htmlJST) {
 		/**
 		 * Remove this once we get real data.
 		 */
-		loadTestData: function() {
+		loadData: function() {
 			this.recruiters.push({
-				name: "John Doe",
-				title: "Lead Recruiter",
-				url: "/img/recruiter.png",
-				location: "Chesapeake, VA"
+				name: "Hollyn Griffith",
+				title: "Recruiting Manager,",
+				url: Domain.get() +"img/Hollyn-Griffith.jpg",
+				location: "Central Region Recruiter"
 			});
 
 			this.recruiters.push({
-				name: "Jane Doe",
-				title: "Junior Recruiter",
-				url: "/img/recruiter.png",
-				location: "Norfolk, VA"
+				name: "Allison Stirrup",
+				title: "Manager of Recruiting and Temp Staffing",
+				url: Domain.get() +"img/Allison-Stirrup.jpg",
+				location: ""
+			});
+
+			this.recruiters.push({
+				name: "Krystle Costigan",
+				title: "Southeast Recruiter",
+				url: Domain.get() +"img/Krystle-Costigan.jpg",
+				location: ""
+			});
+
+			this.recruiters.push({
+				name: "Leslie Goldschmidt",
+				title: "Western Recruiter",
+				url: Domain.get() +"img/Leslie-Goldschmidt.jpg",
+				location: ""
 			});
 		},
 
@@ -71,7 +85,7 @@ define(['jquery', 'templates/html.jst'], function($, htmlJST) {
 		},
 
 		render: function() {
-			this.loadTestData();
+			this.loadData();
 
 			this.el.html(JST['src/js/templates/meetOurTeam.html']({
 				recruiters: this.recruiters

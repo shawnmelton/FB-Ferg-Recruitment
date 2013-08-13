@@ -2,7 +2,7 @@ define(['jquery'], function($) {
 	var YouTubePlayer = function() {};
 	YouTubePlayer.prototype = {
 		videoEl: false,
-		videoId: "rGgX_oqdib4",
+		videoId: "lUhRPviJD1s",
 		overlayEl: false,
 
 		/**
@@ -74,7 +74,7 @@ define(['jquery'], function($) {
 
 		showVideo: function() {
 			if(this.videoEl === false) {
-				this.videoEl = $('<section id="ytp-video"><iframe width="800" height="450" frameborder="0" allowfullscreen="1" src="http://www.youtube.com/embed/'+ this.videoId +'?autoplay=1">Your browser does not support iframes.  Please enable this feature to take advantage of the all the features of this app.</iframe></section>');
+				this.videoEl = $('<section id="ytp-video"><iframe width="800" height="450" frameborder="0" allowfullscreen="1" src="https://www.youtube.com/embed/'+ this.videoId +'?autoplay=1">Your browser does not support iframes.  Please enable this feature to take advantage of the all the features of this app.</iframe></section>');
 				$("body").append(this.videoEl);
 			}
 

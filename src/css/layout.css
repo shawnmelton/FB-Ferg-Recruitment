@@ -171,9 +171,9 @@ html {
           margin: 20px 0 0;
           float: left;
           text-align: center;
-          width: 152px; }
+          width: 158px; }
           html > body > #wrapper > section#events > #apply-buttons > p:first-child {
-            margin-right: 30px; }
+            margin-right: 26px; }
           html > body > #wrapper > section#events > #apply-buttons > p > span {
             display: block;
             text-transform: uppercase;
@@ -182,6 +182,7 @@ html {
             display: block;
             height: 34px;
             width: 152px;
+            margin: 0 auto;
             background: url(../img/apply-button.png) no-repeat 0 0; }
             html > body > #wrapper > section#events > #apply-buttons > p > a:hover {
               background-position: 0 -34px; }
@@ -268,7 +269,7 @@ html {
           html > body > #wrapper > section#middle-content > div#three-columns > section#meet-our-team > div {
             position: relative;
             width: 238px;
-            height: 218px;
+            height: 230px;
             margin-bottom: 22px;
             overflow: hidden; }
             html > body > #wrapper > section#middle-content > div#three-columns > section#meet-our-team > div > #slider {
@@ -285,9 +286,11 @@ html {
                 html > body > #wrapper > section#middle-content > div#three-columns > section#meet-our-team > div > #slider > div > img {
                   display: block;
                   width: 238px;
-                  height: 170px; }
+                  height: 170px;
+                  padding-bottom: 9px;
+                  background: url(../img/meet-our-staff-shadow.png) no-repeat bottom center; }
                 html > body > #wrapper > section#middle-content > div#three-columns > section#meet-our-team > div > #slider > div > h4 {
-                  margin: 10px 0 0;
+                  margin: 4px 0 0;
                   font-family: arial, sans-serif;
                   font-size: 14px;
                   color: #00567f; }
@@ -308,7 +311,7 @@ html {
               cursor: default; }
             html > body > #wrapper > section#middle-content > div#three-columns > section#meet-our-team > a#slider-prev {
               background-image: url(../img/meet-our-team-previous.png);
-              margin-left: 56px; }
+              margin-left: 75px; }
             html > body > #wrapper > section#middle-content > div#three-columns > section#meet-our-team > a#slider-next {
               background-image: url(../img/meet-our-team-next.png); }
           html > body > #wrapper > section#middle-content > div#three-columns > section#meet-our-team > p {
@@ -382,6 +385,7 @@ html {
       right: 0;
       background: #000;
       opacity: 0.8;
+      filter: alpha(opacity=80);
       cursor: pointer; }
     html > body > #ytp-video {
       display: none;

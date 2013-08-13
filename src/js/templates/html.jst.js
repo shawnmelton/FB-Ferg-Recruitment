@@ -8,7 +8,7 @@ with (obj) {
 __p += '<table id="events-list-table">\r\n\t';
  _.each(events, function(event) { ;
 __p += '\r\n\t<tr' +
-((__t = ( event.class )) == null ? '' : __t) +
+((__t = ( event.cls )) == null ? '' : __t) +
 '>\r\n\t\t<td width="40%">' +
 ((__t = ( event.location )) == null ? '' : __t) +
 '</td>\r\n\t\t<td width="35%">' +
@@ -59,7 +59,7 @@ __p += '\r\n\t<div>\r\n\t\t<img src="' +
 ((__t = ( recruiter.name )) == null ? '' : __t) +
 ' : ' +
 ((__t = ( recruiter.title )) == null ? '' : __t) +
-', ' +
+' ' +
 ((__t = ( recruiter.location )) == null ? '' : __t) +
 '</h4>\r\n\t</div>\r\n';
  }); ;

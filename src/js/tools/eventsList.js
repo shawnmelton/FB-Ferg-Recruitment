@@ -1,4 +1,4 @@
-define(['jquery', 'templates/html.jst'], function($, htmlJST) {
+define(['jquery', 'templates/html.jst', 'tools/domain'], function($, htmlJST, Domain) {
 	var EventsList = (function() {});
 	EventsList.prototype = {
 		el: $("#events-list > div"),
@@ -45,7 +45,7 @@ define(['jquery', 'templates/html.jst'], function($, htmlJST) {
 		 */
 		build: function() {
 			var _this = this;
-			$.getJSON("/content/", {
+			$.getJSON(Domain.get() +"content/", {
 				json: "get_events",
 				field: this.orderField,
 				dir: (this.orderDirAsc ? "asc" : "desc")
