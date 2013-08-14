@@ -9,14 +9,17 @@ define(['jquery', 'templates/html.jst', 'tools/domain'], function($, htmlJST, Do
 		animationSpeed: 600,
 		nextBtn: $("#slider-next"),
 		prevBtn: $("#slider-prev"),
+		loopInterval: null,
 
 		addEvents: function() {
 			var _this = this;
 			this.prevBtn.click(function() {
+				_this.stopLoop();
 				_this.moveRight();
 			});
 
 			this.nextBtn.click(function() {
+				_this.stopLoop();
 				_this.moveLeft();
 			});
 		},
@@ -74,6 +77,9 @@ define(['jquery', 'templates/html.jst', 'tools/domain'], function($, htmlJST, Do
 			if(this.currentIdx < this.recruiters.length) {
 				this.currentIdx++;
 				this.move();
+			} else if(this.loopInterval !== null) {
+				this.currentIdx = 1;
+				this.move();
 			}
 		},
 
@@ -94,6 +100,29 @@ define(['jquery', 'templates/html.jst', 'tools/domain'], function($, htmlJST, Do
 			this.initSlider();
 			this.toggleButtons();
 			this.addEvents();
+			this.startLoop();
+		},
+
+		/**
+		 * Start cycling through recruiters.
+		 */
+		startLoop: function() {
+			if(this.loopInterval === null) {
+				var _this = this;
+				this.loopInterval = setInterval(function() {
+					_this.moveLeft();
+				}, 5000);
+			}
+		},
+
+		/**
+		 * Stop cycling through the recruiters.
+		 */
+		stopLoop: function() {
+			if(this.loopInterval !== null) {
+				clearInterval(this.loopInterval);
+				this.loopInterval = null;
+			}
 		},
 
 		/**

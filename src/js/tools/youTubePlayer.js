@@ -74,7 +74,7 @@ define(['jquery'], function($) {
 
 		showVideo: function() {
 			if(this.videoEl === false) {
-				this.videoEl = $('<section id="ytp-video"><iframe width="800" height="450" frameborder="0" allowfullscreen="1" src="https://www.youtube.com/embed/'+ this.videoId +'?autoplay=1">Your browser does not support iframes.  Please enable this feature to take advantage of the all the features of this app.</iframe></section>');
+				this.videoEl = $('<section id="ytp-video"><iframe width="750" height="422" frameborder="0" allowfullscreen="1" src="https://www.youtube.com/embed/'+ this.videoId +'?autoplay=1">Your browser does not support iframes.  Please enable this feature to take advantage of the all the features of this app.</iframe></section>');
 				$("body").append(this.videoEl);
 			}
 

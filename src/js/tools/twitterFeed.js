@@ -36,12 +36,19 @@ define(['jquery', 'templates/html.jst', 'libs/sha1', 'libs/codebird'], function(
 		 * Prepare tweet date to proper format.
 		 */
 		prepareDate: function(date) {
-			var d = new Date(date).getMonth();
-			if(d >= 0 && d <= 11) {
-				return this.months[d] +" "+ new Date(date).getDate();
+			var d = new Date(date);
+			var m = d.getMonth();
+			if(m >= 0 && m <= 11) {
+				return this.months[m] +" "+ d.getDate();
+			} else {
+				//Tue Aug 13 16:15:17 +0000 2013
+				var matches = date.match(/^([a-z,A-Z]+) ([a-z,A-Z]+) (\d+) /);
+				if(matches.length > 2) {
+					return matches[2] +" "+ matches[3];
+				}
 			}
 
-			return "Err "+ new Date(date).getDate();
+			return "Err";
 		},
 
 		/**
