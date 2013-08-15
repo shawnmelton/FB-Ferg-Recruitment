@@ -63,31 +63,44 @@ define(['jquery', 'templates/html.jst', 'tools/domain'], function($, htmlJST, Do
 				url: Domain.get() +"img/Leslie-Goldschmidt.jpg",
 				location: ""
 			});
+
+			this.recruiters.push({
+				name: "Hollyn Griffith",
+				title: "Recruiting Manager,",
+				url: Domain.get() +"img/Hollyn-Griffith.jpg",
+				location: "Central Region Recruiter"
+			});
 		},
 
 		move: function() {
+			var _this = this;
 			this.slider.animate({
 				left: ((this.currentIdx - 1) * this.stepWidth * -1) +"px"
 			}, this.animationSpeed);
 
-			this.toggleButtons();
+			//this.toggleButtons();
 		},
 
 		moveLeft: function() {
 			if(this.currentIdx < this.recruiters.length) {
 				this.currentIdx++;
-				this.move();
-			} else if(this.loopInterval !== null) {
-				this.currentIdx = 1;
-				this.move();
+			} else {
+				this.slider.css("left", "0px");
+				this.currentIdx = 2;
 			}
+
+			this.move();
 		},
 
 		moveRight: function() {
 			if(this.currentIdx > 1) {
 				this.currentIdx--;
-				this.move();
+			} else {
+				this.slider.css("left", ((this.recruiters.length - 1) * this.stepWidth * -1) +"px");
+				this.currentIdx = this.recruiters.length - 1;
 			}
+
+			this.move();
 		},
 
 		render: function() {
@@ -98,7 +111,7 @@ define(['jquery', 'templates/html.jst', 'tools/domain'], function($, htmlJST, Do
 			}));
 
 			this.initSlider();
-			this.toggleButtons();
+			//this.toggleButtons();
 			this.addEvents();
 			this.startLoop();
 		},

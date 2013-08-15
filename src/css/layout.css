@@ -1,5 +1,5 @@
 html {
-  font-family: "Myriad Pro", arial, sans-serif;
+  font-family: arial, sans-serif;
   font-size: 13px; }
   html > body {
     position: relative;
@@ -36,12 +36,13 @@ html {
           display: table;
           clear: both; }
         html > body > #wrapper > header > p {
-          color: #fff;
-          margin: 0 7px 0 0;
-          height: 47px;
-          line-height: 54px;
-          font-size: 16px;
-          float: right; }
+          width: 133px;
+          height: 13px;
+          float: right;
+          margin: 18px 7px 0 0;
+          background: url(../img/get-social-with-us-heading.png) no-repeat 0 0; }
+          html > body > #wrapper > header > p > span {
+            display: none; }
         html > body > #wrapper > header > a {
           float: right;
           margin: 13px 0 0 6px;
@@ -83,12 +84,14 @@ html {
         border-width: 3px 0;
         color: #fff;
         padding: 20px;
-        font-family: times;
         font-size: 14px; }
         html > body > #wrapper > section#events:after {
           content: " ";
           display: table;
           clear: both; }
+        html > body > #wrapper > section#events > p {
+          line-height: 18px;
+          color: #eee; }
         html > body > #wrapper > section#events > #events-list {
           width: 380px;
           float: right;
@@ -99,7 +102,6 @@ html {
             width: 244px;
             background: url(../img/upcoming-events-heading.png) no-repeat 0 0; }
           html > body > #wrapper > section#events > #events-list table {
-            font-family: arial;
             font-size: 15px;
             border-collapse: collapse;
             width: 380px; }
@@ -118,9 +120,7 @@ html {
                 background-position: 100% 40%; }
           html > body > #wrapper > section#events > #events-list > div {
             position: relative;
-            padding: 0 0 10px;
-            background: url(../img/events-list-bottom.png) repeat-x bottom left;
-            height: 270px;
+            height: 285px;
             overflow: hidden; }
             html > body > #wrapper > section#events > #events-list > div > p {
               position: absolute;
@@ -139,6 +139,13 @@ html {
                 vertical-align: top; }
               html > body > #wrapper > section#events > #events-list > div > table tr.odd > td {
                 background: #16648b; }
+            html > body > #wrapper > section#events > #events-list > div > div {
+              position: absolute;
+              bottom: 0px;
+              left: 0;
+              right: 0;
+              height: 12px;
+              background: url(../img/events-list-bottom.png) repeat-x bottom left; }
           html > body > #wrapper > section#events > #events-list > p {
             margin: 9px auto 0;
             width: 73px; }
@@ -168,7 +175,7 @@ html {
           display: table;
           clear: both; }
         html > body > #wrapper > section#events > #apply-buttons > p {
-          margin: 20px 0 0;
+          margin: 0;
           float: left;
           text-align: center;
           width: 158px; }
@@ -176,8 +183,16 @@ html {
             margin-right: 26px; }
           html > body > #wrapper > section#events > #apply-buttons > p > span {
             display: block;
-            text-transform: uppercase;
-            margin-bottom: 15px; }
+            width: 108px;
+            height: 26px;
+            background: url(../img/experienced-professionals-heading.png) no-repeat 0 0;
+            margin: 0 auto 15px; }
+            html > body > #wrapper > section#events > #apply-buttons > p > span:first-child {
+              width: 147px;
+              height: 27px;
+              background: url(../img/recent-graduates-heading.png) no-repeat 0 0; }
+            html > body > #wrapper > section#events > #apply-buttons > p > span > strong {
+              display: none; }
           html > body > #wrapper > section#events > #apply-buttons > p > a {
             display: block;
             height: 34px;
@@ -204,7 +219,6 @@ html {
             background: #01326a; }
         html > body > #wrapper > section#middle-content > div#three-columns {
           padding: 21px 11px 0;
-          font-family: arial;
           font-size: 14px; }
           html > body > #wrapper > section#middle-content > div#three-columns:after {
             content: " ";
@@ -222,11 +236,13 @@ html {
               height: 34px;
               margin-bottom: 23px; }
           html > body > #wrapper > section#middle-content > div#three-columns > section#links {
-            font-size: 14px; }
+            font-size: 14px;
+            color: #333; }
             html > body > #wrapper > section#middle-content > div#three-columns > section#links > h3 {
               background: url(../img/important-links-heading.png) no-repeat 0 0; }
             html > body > #wrapper > section#middle-content > div#three-columns > section#links > article {
-              margin-bottom: 20px; }
+              margin-bottom: 20px;
+              line-height: 18px; }
               html > body > #wrapper > section#middle-content > div#three-columns > section#links > article > h4 {
                 margin: 0 0 2px;
                 color: #00567f; }
@@ -242,18 +258,19 @@ html {
                   text-decoration: underline; }
           html > body > #wrapper > section#middle-content > div#three-columns > section#twitter-feed {
             min-height: 325px;
-            background: url(../img/twitter-loading.gif) no-repeat center center; }
+            background: url(../img/twitter-loading.gif) no-repeat center center;
+            line-height: 18px;
+            color: #333; }
             html > body > #wrapper > section#middle-content > div#three-columns > section#twitter-feed.loaded {
               background-image: none; }
             html > body > #wrapper > section#middle-content > div#three-columns > section#twitter-feed > h3 {
               background: url(../img/twitter-feed-heading.png) no-repeat 0 0; }
             html > body > #wrapper > section#middle-content > div#three-columns > section#twitter-feed > p {
               margin: 0 0 28px;
-              font-size: 14px;
-              font-family: arial, sans-serif; }
+              font-size: 14px; }
               html > body > #wrapper > section#middle-content > div#three-columns > section#twitter-feed > p > small {
                 display: block;
-                margin-bottom: 7px;
+                margin-bottom: 6px;
                 font-size: 14px;
                 font-style: italic;
                 color: #999; }
@@ -291,7 +308,6 @@ html {
                   background: url(../img/meet-our-staff-shadow.png) no-repeat bottom center; }
                 html > body > #wrapper > section#middle-content > div#three-columns > section#meet-our-team > div > #slider > div > h4 {
                   margin: 4px 0 0;
-                  font-family: arial, sans-serif;
                   font-size: 14px;
                   color: #00567f; }
           html > body > #wrapper > section#middle-content > div#three-columns > section#meet-our-team > a {
@@ -338,9 +354,9 @@ html {
           height: 18px;
           background: url(../img/find-out-more-heading.png) no-repeat 0 0; }
         html > body > #wrapper > footer > p {
-          color: #fff;
+          color: #eee;
           font-size: 14px;
-          font-family: times, sans-serif; }
+          line-height: 18px; }
         html > body > #wrapper > footer > a {
           display: block;
           margin-left: 135px;
@@ -367,7 +383,6 @@ html {
             line-height: 17px;
             float: right;
             color: #fff;
-            font-family: arial, sans-serif;
             font-size: 9px; }
             html > body > #wrapper > footer > div > p > a {
               color: #fff;

@@ -8,7 +8,7 @@ $grayText: #828385;
 $baseFontSize: 13px;
 
 html {
-	font-family: "Myriad Pro", arial, sans-serif;
+	font-family: arial, sans-serif;
 	font-size: $baseFontSize;
 
 	>body {
@@ -63,12 +63,13 @@ html {
 				}
 
 				>p {
-					color: #fff;
-					margin: 0 7px 0 0;
-					height: 47px;
-					line-height: 54px;
-					font-size: $baseFontSize + 3;
+					width: 133px;
+					height: 13px;
 					float: right;
+					margin: 18px 7px 0 0;
+					background: url(../img/get-social-with-us-heading.png) no-repeat 0 0;
+
+					>span { display: none; }
 				}
 
 				>a {
@@ -122,10 +123,14 @@ html {
 				border-width: 3px 0;
 				color: #fff;
 				padding: 20px;
-				font-family: times;
 				font-size: $baseFontSize + 1;
 
 				&:after { @include clearfix; }
+
+				>p {
+					line-height: 18px;
+					color: #eee;
+				}
 
 				>#events-list {
 					width: 380px;
@@ -140,7 +145,6 @@ html {
 					}
 
 					table {
-						font-family: arial;
 						font-size: $baseFontSize + 2;
 						border-collapse: collapse;
 						width: 380px;
@@ -162,9 +166,7 @@ html {
 					
 					>div {
 						position: relative;
-						padding: 0 0 10px;
-						background: url(../img/events-list-bottom.png) repeat-x bottom left;
-						height: 270px;
+						height: 285px;
 						overflow: hidden;
 
 						>p {
@@ -188,6 +190,15 @@ html {
 							}
 
 							tr.odd > td { background: #16648b; }
+						}
+
+						>div {
+							position: absolute;
+							bottom: 0px;
+							left: 0;
+							right: 0;
+							height: 12px;
+							background: url(../img/events-list-bottom.png) repeat-x bottom left;
 						}
 					}
 
@@ -222,7 +233,7 @@ html {
 					&:after { @include clearfix; }
 
 					>p {
-						margin: 20px 0 0;
+						margin: 0;
 						float: left;
 						text-align: center;
 						width: 158px;
@@ -231,8 +242,18 @@ html {
 
 						>span {
 							display: block;
-							text-transform: uppercase;
-							margin-bottom: 15px;
+							width: 108px;
+							height: 26px;
+							background: url(../img/experienced-professionals-heading.png) no-repeat 0 0;
+							margin: 0 auto 15px;
+
+							&:first-child {
+								width: 147px;
+								height: 27px;
+								background: url(../img/recent-graduates-heading.png) no-repeat 0 0;
+							}
+
+							>strong { display: none; }
 						}
 
 						>a {
@@ -272,7 +293,6 @@ html {
 
 				>div#three-columns {
 					padding: 21px 11px 0;
-					font-family: arial;
 					font-size: $baseFontSize + 1;
 
 					&:after { @include clearfix; }
@@ -295,11 +315,13 @@ html {
 
 					>section#links {
 						font-size: $baseFontSize + 1;
+						color: #333;
 
 						>h3 { background: url(../img/important-links-heading.png) no-repeat 0 0; }
 
 						>article {
 							margin-bottom: 20px;
+							line-height: 18px;
 
 							>h4 {
 								margin: 0 0 2px;
@@ -321,6 +343,8 @@ html {
 					>section#twitter-feed {
 						min-height: 325px;
 						background: url(../img/twitter-loading.gif) no-repeat center center;
+						line-height: 18px;
+						color: #333;
 
 						&.loaded { background-image: none; }
 
@@ -329,11 +353,10 @@ html {
 						>p {
 							margin: 0 0 28px;
 							font-size: $baseFontSize + 1;
-							font-family: arial, sans-serif;
 
 							>small {
 								display: block;
-								margin-bottom: 7px;
+								margin-bottom: 6px;
 								font-size: $baseFontSize + 1;
 								font-style: italic;
 								color: #999;
@@ -380,7 +403,6 @@ html {
 
 									>h4 {
 										margin: 4px 0 0;
-										font-family: arial, sans-serif;
 										font-size: 14px;
 										color: $darkBlueText;
 									}
@@ -446,9 +468,9 @@ html {
 				}
 
 				>p {
-					color: #fff;
+					color: #eee;
 					font-size: $baseFontSize + 1;
-					font-family: times, sans-serif;
+					line-height: 18px;
 				}
 
 				>a {
@@ -481,7 +503,6 @@ html {
 						line-height: 17px;
 						float: right;
 						color: #fff;
-						font-family: arial, sans-serif;
 						font-size: $baseFontSize - 4;
 
 						>a {

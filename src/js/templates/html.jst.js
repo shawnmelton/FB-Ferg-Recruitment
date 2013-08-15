@@ -17,7 +17,7 @@ __p += '\r\n\t<tr' +
 ((__t = ( event.date )) == null ? '' : __t) +
 '</td>\r\n\t</tr>\r\n\t';
  }); ;
-__p += '\r\n</table>';
+__p += '\r\n</table>\r\n<div></div>';
 
 }
 return __p
