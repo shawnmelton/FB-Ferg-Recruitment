@@ -128,8 +128,10 @@ html {
 				&:after { @include clearfix; }
 
 				>p {
-					line-height: 18px;
+					line-height: 20px;
 					color: #eee;
+					font-family: times, sans-serif;
+					font-size: $baseFontSize + 1;
 				}
 
 				>#events-list {
@@ -191,15 +193,12 @@ html {
 
 							tr.odd > td { background: #16648b; }
 						}
+					}
 
-						>div {
-							position: absolute;
-							bottom: 0px;
-							left: 0;
-							right: 0;
-							height: 12px;
-							background: url(../img/events-list-bottom.png) repeat-x bottom left;
-						}
+					>span {
+						display: block;
+						height: 12px;
+						background: url(../img/events-list-bottom.png) repeat-x bottom left;
 					}
 
 					>p {
@@ -245,9 +244,10 @@ html {
 							width: 108px;
 							height: 26px;
 							background: url(../img/experienced-professionals-heading.png) no-repeat 0 0;
-							margin: 0 auto 15px;
+							margin: 1px auto 15px;
 
-							&:first-child {
+							&#recent-grads {
+								margin-top: 0;
 								width: 147px;
 								height: 27px;
 								background: url(../img/recent-graduates-heading.png) no-repeat 0 0;
@@ -292,7 +292,7 @@ html {
 				}
 
 				>div#three-columns {
-					padding: 21px 11px 0;
+					padding: 21px 20px 0;
 					font-size: $baseFontSize + 1;
 
 					&:after { @include clearfix; }
@@ -301,7 +301,7 @@ html {
 						width: 239px;
 						float: left;
 						overflow: hidden;
-						padding-left: 25px;
+						padding-left: 21px;
 
 						&:first-child { padding-left: 0; }
 
@@ -469,8 +469,9 @@ html {
 
 				>p {
 					color: #eee;
+					font-family: times, sans-serif;
 					font-size: $baseFontSize + 1;
-					line-height: 18px;
+					line-height: 20px;
 				}
 
 				>a {

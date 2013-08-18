@@ -27,12 +27,8 @@ define(['jquery', 'templates/html.jst', 'tools/domain'], function($, htmlJST, Do
 		 */
 		addMovementEvents: function() {
 			var _this = this;
-			this.buttons.mousedown(function() {
+			this.buttons.mouseover(function() {
 				_this.startMoving(($(this).find("span").html() === "Up"));
-			});
-
-			this.buttons.mouseup(function() {
-				_this.stopMoving();
 			});
 
 			this.buttons.mouseout(function() {
@@ -157,7 +153,7 @@ define(['jquery', 'templates/html.jst', 'tools/domain'], function($, htmlJST, Do
 			var _this = this;
 			this.moveInterval = setInterval(function() {
 				_this.move(moveUp);
-			}, 50);
+			}, 25);
 		},
 
 		/**

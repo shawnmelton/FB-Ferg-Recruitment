@@ -90,8 +90,10 @@ html {
           display: table;
           clear: both; }
         html > body > #wrapper > section#events > p {
-          line-height: 18px;
-          color: #eee; }
+          line-height: 20px;
+          color: #eee;
+          font-family: times, sans-serif;
+          font-size: 14px; }
         html > body > #wrapper > section#events > #events-list {
           width: 380px;
           float: right;
@@ -139,13 +141,10 @@ html {
                 vertical-align: top; }
               html > body > #wrapper > section#events > #events-list > div > table tr.odd > td {
                 background: #16648b; }
-            html > body > #wrapper > section#events > #events-list > div > div {
-              position: absolute;
-              bottom: 0px;
-              left: 0;
-              right: 0;
-              height: 12px;
-              background: url(../img/events-list-bottom.png) repeat-x bottom left; }
+          html > body > #wrapper > section#events > #events-list > span {
+            display: block;
+            height: 12px;
+            background: url(../img/events-list-bottom.png) repeat-x bottom left; }
           html > body > #wrapper > section#events > #events-list > p {
             margin: 9px auto 0;
             width: 73px; }
@@ -186,8 +185,9 @@ html {
             width: 108px;
             height: 26px;
             background: url(../img/experienced-professionals-heading.png) no-repeat 0 0;
-            margin: 0 auto 15px; }
-            html > body > #wrapper > section#events > #apply-buttons > p > span:first-child {
+            margin: 1px auto 15px; }
+            html > body > #wrapper > section#events > #apply-buttons > p > span#recent-grads {
+              margin-top: 0;
               width: 147px;
               height: 27px;
               background: url(../img/recent-graduates-heading.png) no-repeat 0 0; }
@@ -218,7 +218,7 @@ html {
             height: 160px;
             background: #01326a; }
         html > body > #wrapper > section#middle-content > div#three-columns {
-          padding: 21px 11px 0;
+          padding: 21px 20px 0;
           font-size: 14px; }
           html > body > #wrapper > section#middle-content > div#three-columns:after {
             content: " ";
@@ -228,7 +228,7 @@ html {
             width: 239px;
             float: left;
             overflow: hidden;
-            padding-left: 25px; }
+            padding-left: 21px; }
             html > body > #wrapper > section#middle-content > div#three-columns > section:first-child {
               padding-left: 0; }
             html > body > #wrapper > section#middle-content > div#three-columns > section > h3 {
@@ -355,8 +355,9 @@ html {
           background: url(../img/find-out-more-heading.png) no-repeat 0 0; }
         html > body > #wrapper > footer > p {
           color: #eee;
+          font-family: times, sans-serif;
           font-size: 14px;
-          line-height: 18px; }
+          line-height: 20px; }
         html > body > #wrapper > footer > a {
           display: block;
           margin-left: 135px;
