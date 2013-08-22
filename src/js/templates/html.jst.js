@@ -51,16 +51,16 @@ function print() { __p += __j.call(arguments, '') }
 with (obj) {
 __p += '<div id="slider">\n';
  _.each(recruiters, function(recruiter) { ;
-__p += '\n\t<div>\n\t\t<img src="' +
-((__t = ( recruiter.url )) == null ? '' : __t) +
+__p += '\n\t<div>\n\t\t';
+ _.each(recruiter.attachments, function(attachment) { ;
+__p += '\n\t\t\t<img src="' +
+((__t = ( attachment.url )) == null ? '' : __t) +
 '" alt="' +
-((__t = ( recruiter.name )) == null ? '' : __t) +
-'">\n\t\t<h4>' +
-((__t = ( recruiter.name )) == null ? '' : __t) +
-' : ' +
 ((__t = ( recruiter.title )) == null ? '' : __t) +
-' ' +
-((__t = ( recruiter.location )) == null ? '' : __t) +
+'">\n\t\t';
+ }); ;
+__p += '\n\t\t<h4>' +
+((__t = ( recruiter.title )) == null ? '' : __t) +
 '</h4>\n\t</div>\n';
  }); ;
 __p += '\n</div>';

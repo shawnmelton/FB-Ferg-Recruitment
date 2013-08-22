@@ -35,7 +35,7 @@ define(['jquery', 'templates/html.jst', 'tools/domain'], function($, htmlJST, Do
 		/**
 		 * Remove this once we get real data.
 		 */
-		loadData: function() {
+		/*loadData: function() {
 			this.recruiters.push({
 				name: "Hollyn Griffith",
 				title: "Recruiting Manager,",
@@ -70,7 +70,7 @@ define(['jquery', 'templates/html.jst', 'tools/domain'], function($, htmlJST, Do
 				url: Domain.get() +"img/Hollyn-Griffith.jpg",
 				location: "Central Region Recruiter"
 			});
-		},
+		},*/
 
 		move: function() {
 			var _this = this;
@@ -104,16 +104,31 @@ define(['jquery', 'templates/html.jst', 'tools/domain'], function($, htmlJST, Do
 		},
 
 		render: function() {
-			this.loadData();
+			var _this = this;
+			$.getJSON(Domain.get() +"content/", {
+				json: "get_posts",
+				category_name: "team-members",
+				order: "ASC",
+				orderby: "date"
+			}, function(response) {
+				if(response.status && response.status === "ok" && response.posts) {
+					_this.recruiters = response.posts;
 
-			this.el.html(JST['src/js/templates/meetOurTeam.html']({
-				recruiters: this.recruiters
-			}));
+					// Append the first record to the end so we can give the appearance of an unending loop.
+					if(_this.recruiters.length > 0) {
+						_this.recruiters.push(_this.recruiters[0]);
+					}
 
-			this.initSlider();
-			//this.toggleButtons();
-			this.addEvents();
-			this.startLoop();
+					_this.el.append(JST['src/js/templates/meetOurTeam.html']({
+						recruiters: _this.recruiters
+					}));
+
+					_this.initSlider();
+					//_this.toggleButtons();
+					_this.addEvents();
+					_this.startLoop();
+				}
+			});
 		},
 
 		/**

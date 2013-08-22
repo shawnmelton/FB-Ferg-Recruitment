@@ -1,8 +1,10 @@
 <div id="slider">
 <% _.each(recruiters, function(recruiter) { %>
 	<div>
-		<img src="<%= recruiter.url %>" alt="<%= recruiter.name %>">
-		<h4><%= recruiter.name %> : <%= recruiter.title %> <%= recruiter.location %></h4>
+		<% _.each(recruiter.attachments, function(attachment) { %>
+			<img src="<%= attachment.url %>" alt="<%= recruiter.title %>">
+		<% }); %>
+		<h4><%= recruiter.title %></h4>
 	</div>
 <% }); %>
 </div>
