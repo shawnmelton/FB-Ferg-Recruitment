@@ -362,7 +362,7 @@ class JSON_API_Core_Controller {
 
     $events = array();
     try {
-      $results = $wpdb->get_results("SELECT * FROM `". $wpdb->prefix ."events` ORDER BY {$order}");
+      $results = $wpdb->get_results("SELECT * FROM `". $wpdb->prefix ."events` WHERE (UNIX_TIMESTAMP() - 86400) < theend ORDER BY {$order}");
       if ($results) {
         foreach($results as $index => $event) {
           $events[] = array(
