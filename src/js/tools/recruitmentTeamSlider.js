@@ -127,6 +127,7 @@ define(['jquery', 'templates/html.jst', 'tools/domain'], function($, htmlJST, Do
 					//_this.toggleButtons();
 					_this.addEvents();
 					_this.startLoop();
+					_this.el.addClass("loaded");
 				}
 			});
 		},

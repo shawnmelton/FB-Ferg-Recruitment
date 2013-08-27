@@ -66,6 +66,7 @@ define(['jquery', 'templates/html.jst', 'libs/sha1', 'libs/codebird'], function(
 
 			var _this = this;
 			var cb = new Codebird;
+			cb.setProxy('https://codebird-cors-proxy.herokuapp.com/');
 			cb.setConsumerKey("wVe1aHQXnSxIRDwjXMjjg", "w1f3tJzkzwwmUFWKN9GAutOG40vSidzc6MVYlP3EbE");
 			cb.setToken("431035831-whH6J5UXuwFfytGLgxGIqYpYOxbdHk1KPRKjIvYN", "P5u91cg0NRqcgV7i6UpZ9IF90AiHnftSXNHWOY2BMN4");
 

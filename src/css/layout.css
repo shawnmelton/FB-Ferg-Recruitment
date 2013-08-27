@@ -226,16 +226,20 @@ html {
             clear: both; }
           html > body > #wrapper > section#middle-content > div#three-columns > section {
             width: 239px;
+            min-height: 355px;
             float: left;
             overflow: hidden;
             padding-left: 21px; }
             html > body > #wrapper > section#middle-content > div#three-columns > section:first-child {
               padding-left: 0; }
+            html > body > #wrapper > section#middle-content > div#three-columns > section.loaded {
+              background-image: none !important; }
             html > body > #wrapper > section#middle-content > div#three-columns > section > h3 {
               width: 239px;
               height: 34px;
               margin-bottom: 23px; }
           html > body > #wrapper > section#middle-content > div#three-columns > section#links {
+            background: url(../img/links-loading.gif) no-repeat center center;
             font-size: 14px;
             color: #333; }
             html > body > #wrapper > section#middle-content > div#three-columns > section#links > h3 {
@@ -257,12 +261,9 @@ html {
                 html > body > #wrapper > section#middle-content > div#three-columns > section#links > article > a:hover {
                   text-decoration: underline; }
           html > body > #wrapper > section#middle-content > div#three-columns > section#twitter-feed {
-            min-height: 325px;
             background: url(../img/twitter-loading.gif) no-repeat center center;
             line-height: 18px;
             color: #333; }
-            html > body > #wrapper > section#middle-content > div#three-columns > section#twitter-feed.loaded {
-              background-image: none; }
             html > body > #wrapper > section#middle-content > div#three-columns > section#twitter-feed > h3 {
               background: url(../img/twitter-feed-heading.png) no-repeat 0 0; }
             html > body > #wrapper > section#middle-content > div#three-columns > section#twitter-feed > p {
@@ -281,61 +282,64 @@ html {
                 text-decoration: none; }
                 html > body > #wrapper > section#middle-content > div#three-columns > section#twitter-feed > p > a:hover {
                   text-decoration: underline; }
-          html > body > #wrapper > section#middle-content > div#three-columns > section#meet-our-team > h3 {
-            background: url(../img/meet-our-team-heading.png) no-repeat 0 0; }
-          html > body > #wrapper > section#middle-content > div#three-columns > section#meet-our-team > div {
-            position: relative;
-            width: 238px;
-            height: 230px;
-            margin-bottom: 22px;
-            overflow: hidden; }
-            html > body > #wrapper > section#middle-content > div#three-columns > section#meet-our-team > div > #slider {
-              position: absolute;
-              left: 0;
-              top: 0; }
-              html > body > #wrapper > section#middle-content > div#three-columns > section#meet-our-team > div > #slider:after {
-                content: " ";
-                display: table;
-                clear: both; }
-              html > body > #wrapper > section#middle-content > div#three-columns > section#meet-our-team > div > #slider > div {
-                float: left;
-                width: 238px; }
-                html > body > #wrapper > section#middle-content > div#three-columns > section#meet-our-team > div > #slider > div > img {
-                  display: block;
-                  width: 238px;
-                  height: 170px;
-                  padding-bottom: 9px;
-                  background: url(../img/meet-our-staff-shadow.png) no-repeat bottom center; }
-                html > body > #wrapper > section#middle-content > div#three-columns > section#meet-our-team > div > #slider > div > h4 {
-                  margin: 4px 0 0;
-                  font-size: 14px;
-                  color: #00567f; }
-          html > body > #wrapper > section#middle-content > div#three-columns > section#meet-our-team > a {
-            display: block;
-            float: left;
-            height: 31px;
-            width: 30px;
-            cursor: pointer;
-            background-position: 0 0;
-            background-repeat: no-repeat; }
-            html > body > #wrapper > section#middle-content > div#three-columns > section#meet-our-team > a:hover {
-              background-position: 0 -31px; }
-            html > body > #wrapper > section#middle-content > div#three-columns > section#meet-our-team > a:active {
-              background-position: 0 -62px; }
-            html > body > #wrapper > section#middle-content > div#three-columns > section#meet-our-team > a.disabled {
-              background-position: 0 -93px;
-              cursor: default; }
-            html > body > #wrapper > section#middle-content > div#three-columns > section#meet-our-team > a#slider-prev {
-              background-image: url(../img/meet-our-team-previous.png);
-              margin-left: 75px; }
-            html > body > #wrapper > section#middle-content > div#three-columns > section#meet-our-team > a#slider-next {
-              background-image: url(../img/meet-our-team-next.png); }
-          html > body > #wrapper > section#middle-content > div#three-columns > section#meet-our-team > p {
-            margin: 0 13px;
-            background: #c10d30;
-            width: 2px;
-            height: 31px;
-            float: left; }
+          html > body > #wrapper > section#middle-content > div#three-columns > section#meet-our-team {
+            min-height: 272px;
+            background: url(../img/team-loading.gif) no-repeat center center; }
+            html > body > #wrapper > section#middle-content > div#three-columns > section#meet-our-team > h3 {
+              background: url(../img/meet-our-team-heading.png) no-repeat 0 0; }
+            html > body > #wrapper > section#middle-content > div#three-columns > section#meet-our-team > div {
+              position: relative;
+              width: 238px;
+              height: 230px;
+              margin-bottom: 22px;
+              overflow: hidden; }
+              html > body > #wrapper > section#middle-content > div#three-columns > section#meet-our-team > div > #slider {
+                position: absolute;
+                left: 0;
+                top: 0; }
+                html > body > #wrapper > section#middle-content > div#three-columns > section#meet-our-team > div > #slider:after {
+                  content: " ";
+                  display: table;
+                  clear: both; }
+                html > body > #wrapper > section#middle-content > div#three-columns > section#meet-our-team > div > #slider > div {
+                  float: left;
+                  width: 238px; }
+                  html > body > #wrapper > section#middle-content > div#three-columns > section#meet-our-team > div > #slider > div > img {
+                    display: block;
+                    width: 238px;
+                    height: 170px;
+                    padding-bottom: 9px;
+                    background: url(../img/meet-our-staff-shadow.png) no-repeat bottom center; }
+                  html > body > #wrapper > section#middle-content > div#three-columns > section#meet-our-team > div > #slider > div > h4 {
+                    margin: 4px 0 0;
+                    font-size: 14px;
+                    color: #00567f; }
+            html > body > #wrapper > section#middle-content > div#three-columns > section#meet-our-team > a {
+              display: block;
+              float: left;
+              height: 31px;
+              width: 30px;
+              cursor: pointer;
+              background-position: 0 0;
+              background-repeat: no-repeat; }
+              html > body > #wrapper > section#middle-content > div#three-columns > section#meet-our-team > a:hover {
+                background-position: 0 -31px; }
+              html > body > #wrapper > section#middle-content > div#three-columns > section#meet-our-team > a:active {
+                background-position: 0 -62px; }
+              html > body > #wrapper > section#middle-content > div#three-columns > section#meet-our-team > a.disabled {
+                background-position: 0 -93px;
+                cursor: default; }
+              html > body > #wrapper > section#middle-content > div#three-columns > section#meet-our-team > a#slider-prev {
+                background-image: url(../img/meet-our-team-previous.png);
+                margin-left: 75px; }
+              html > body > #wrapper > section#middle-content > div#three-columns > section#meet-our-team > a#slider-next {
+                background-image: url(../img/meet-our-team-next.png); }
+            html > body > #wrapper > section#middle-content > div#three-columns > section#meet-our-team > p {
+              margin: 0 13px;
+              background: #c10d30;
+              width: 2px;
+              height: 31px;
+              float: left; }
       html > body > #wrapper > footer {
         border-top: 3px solid #fea41a;
         background: #015480;

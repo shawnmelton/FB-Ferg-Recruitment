@@ -16,6 +16,8 @@ define(['jquery', 'tools/domain'], function($, Domain) {
 					_this.el.append(JST['src/js/templates/importantLinks.html']({
 						articles: response.posts
 					}));
+
+					_this.el.addClass("loaded");
 				}
 			});
 		},

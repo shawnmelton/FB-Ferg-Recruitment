@@ -299,11 +299,14 @@ html {
 
 					>section {
 						width: 239px;
+						min-height: 355px;
 						float: left;
 						overflow: hidden;
 						padding-left: 21px;
 
 						&:first-child { padding-left: 0; }
+
+						&.loaded { background-image: none !important; }
 
 						>h3 {
 							width: 239px;
@@ -314,6 +317,7 @@ html {
 
 
 					>section#links {
+						background: url(../img/links-loading.gif) no-repeat center center;
 						font-size: $baseFontSize + 1;
 						color: #333;
 
@@ -341,12 +345,9 @@ html {
 					}
 
 					>section#twitter-feed {
-						min-height: 325px;
 						background: url(../img/twitter-loading.gif) no-repeat center center;
 						line-height: 18px;
 						color: #333;
-
-						&.loaded { background-image: none; }
 
 						>h3 { background: url(../img/twitter-feed-heading.png) no-repeat 0 0; }
 
@@ -373,6 +374,9 @@ html {
 					}
 
 					>section#meet-our-team {
+						min-height: 272px;
+						background: url(../img/team-loading.gif) no-repeat center center;
+
 						>h3 { background: url(../img/meet-our-team-heading.png) no-repeat 0 0; }
 
 						>div {
