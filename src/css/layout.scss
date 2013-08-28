@@ -289,6 +289,30 @@ html {
 						height: 160px;
 						background: #01326a;
 					}
+
+					>p {
+						margin: 40px 0 0;
+						padding: 30px 35px;
+						border: 1px solid #cfcfcf;
+						color: #333;
+						font-size: $baseFontSize + 1;
+						line-height: 20px;
+
+						&:after { @include clearfix; }
+
+						>a {
+							display: block;
+							height: 34px;
+							width: 152px;
+							margin: 10px 50px 0 0;
+							float: left;
+							background: url(../img/apply-button.png) no-repeat 0 0;
+							box-shadow: 0 0 5px #a8dff8;
+
+							&:hover { background-position: 0 -34px; }
+							&:active { background-position: 0 -68px; }
+						}
+					}
 				}
 
 				>div#three-columns {
