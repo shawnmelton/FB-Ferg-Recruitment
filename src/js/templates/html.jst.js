@@ -44,6 +44,29 @@ __p += '\r\n<article>\r\n\t<h4>' +
 return __p
 };
 
+this["JST"]["src/js/templates/jobPostings.html"] = function(obj) {
+obj || (obj = {});
+var __t, __p = '', __e = _.escape, __j = Array.prototype.join;
+function print() { __p += __j.call(arguments, '') }
+with (obj) {
+__p += '<table id="job-postings">\r\n';
+ _.each(posts, function(post) { ;
+__p += '\r\n\t<tr>\r\n\t\t<td class="first">' +
+((__t = ( post.title )) == null ? '' : __t) +
+'</td>\r\n\t\t<td class="second">' +
+((__t = ( post.content )) == null ? '' : __t) +
+'</td>\r\n\t\t<td class="third">' +
+((__t = ( post.date )) == null ? '' : __t) +
+'</td>\r\n\t\t<td class="fourth"><a href="' +
+((__t = ( post.url )) == null ? '' : __t) +
+'" target="_blank">View Job</a></td>\r\n\t</tr>\r\n';
+ }); ;
+__p += '\r\n</table>';
+
+}
+return __p
+};
+
 this["JST"]["src/js/templates/meetOurTeam.html"] = function(obj) {
 obj || (obj = {});
 var __t, __p = '', __e = _.escape, __j = Array.prototype.join;

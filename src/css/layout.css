@@ -26,6 +26,11 @@ html {
       html > body > #wrapper .redText {
         color: #c10e2e;
         border-color: #c10e2e; }
+      html > body > #wrapper > #cookie-loading {
+        display: none;
+        overflow: hidden;
+        height: 1px;
+        width: 1px; }
       html > body > #wrapper > header {
         height: 47px;
         background: #015480 url(../img/logo.png) no-repeat 0 0;
@@ -216,7 +221,38 @@ html {
           html > body > #wrapper > section#middle-content > div#openings > div {
             width: 720px;
             height: 160px;
-            background: #01326a; }
+            overflow: auto; }
+            html > body > #wrapper > section#middle-content > div#openings > div > table {
+              border-collapse: collapse;
+              border: 0;
+              font-family: arial, sans-serif;
+              width: 700px;
+              background: #eee;
+              font-size: 12px; }
+              html > body > #wrapper > section#middle-content > div#openings > div > table th {
+                background: #036;
+                color: #fff;
+                font-weight: normal;
+                text-align: left; }
+              html > body > #wrapper > section#middle-content > div#openings > div > table td, html > body > #wrapper > section#middle-content > div#openings > div > table th {
+                padding: 5px 12px; }
+                html > body > #wrapper > section#middle-content > div#openings > div > table td > p, html > body > #wrapper > section#middle-content > div#openings > div > table th > p {
+                  margin: 0; }
+                html > body > #wrapper > section#middle-content > div#openings > div > table td > a, html > body > #wrapper > section#middle-content > div#openings > div > table th > a {
+                  color: #00567f; }
+                  html > body > #wrapper > section#middle-content > div#openings > div > table td > a:hover, html > body > #wrapper > section#middle-content > div#openings > div > table th > a:hover {
+                    color: #00a4e1;
+                    text-decoration: none; }
+              html > body > #wrapper > section#middle-content > div#openings > div > table th {
+                padding: 8px 12px; }
+              html > body > #wrapper > section#middle-content > div#openings > div > table tr.odd td {
+                background: #ddd; }
+              html > body > #wrapper > section#middle-content > div#openings > div > table .second {
+                width: 25%; }
+              html > body > #wrapper > section#middle-content > div#openings > div > table .third {
+                width: 20%; }
+              html > body > #wrapper > section#middle-content > div#openings > div > table .fourth {
+                width: 20%; }
           html > body > #wrapper > section#middle-content > div#openings > p {
             margin: 40px 0 0;
             padding: 30px 35px;

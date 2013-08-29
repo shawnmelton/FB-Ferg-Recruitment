@@ -52,6 +52,13 @@ html {
 				border-color: $redText;
 			}
 
+			>#cookie-loading {
+				display: none;
+				overflow: hidden;
+				height: 1px;
+				width: 1px;
+			}
+
 			>header {
 				height: 47px;
 				background: $fergBlue url(../img/logo.png) no-repeat 0 0;
@@ -287,7 +294,47 @@ html {
 					>div {
 						width: 720px;
 						height: 160px;
-						background: #01326a;
+						overflow: auto;
+
+						>table {
+							border-collapse: collapse;
+							border: 0;
+							font-family: arial, sans-serif;
+							width: 700px;
+							background: #eee;
+							font-size: $baseFontSize - 1;
+
+							th {
+								background: #036;
+								color: #fff;
+								font-weight: normal;
+								text-align: left;
+							}
+
+							td, th {
+								padding: 5px 12px;
+
+								>p { margin: 0; }
+								>a {
+									color: $darkBlueText;
+
+									&:hover {
+										color: $blueText;
+										text-decoration: none;
+									}
+								}
+							}
+
+							th { padding: 8px 12px; }
+
+							tr.odd {
+								td { background: #ddd; }
+							}
+
+							.second { width: 25%; }
+							.third { width: 20%; }
+							.fourth { width: 20%; }
+						}
 					}
 
 					>p {

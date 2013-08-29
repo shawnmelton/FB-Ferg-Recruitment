@@ -1,0 +1,10 @@
+<table id="job-postings">
+<% _.each(posts, function(post) { %>
+	<tr>
+		<td class="first"><%= post.title %></td>
+		<td class="second"><%= post.content %></td>
+		<td class="third"><%= post.date %></td>
+		<td class="fourth"><a href="<%= post.url %>" target="_blank">View Job</a></td>
+	</tr>
+<% }); %>
+</table>

@@ -2,7 +2,7 @@ define(['jquery'], function($) {
 	var YouTubePlayer = function() {};
 	YouTubePlayer.prototype = {
 		videoEl: false,
-		videoId: "lUhRPviJD1s",
+		videoId: "mf-aBBdE2wM",
 		overlayEl: false,
 
 		/**
