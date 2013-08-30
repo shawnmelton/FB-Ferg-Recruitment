@@ -3,7 +3,8 @@ html {
   font-size: 13px; }
   html > body {
     position: relative;
-    margin: 0; }
+    margin: 0;
+    overflow: hidden; }
     html > body > #wrapper {
       width: 800px;
       background: #f6f6f6; }
@@ -227,10 +228,11 @@ html {
               border: 0;
               font-family: arial, sans-serif;
               width: 700px;
+              margin: 0 auto;
               background: #eee;
               font-size: 12px; }
               html > body > #wrapper > section#middle-content > div#openings > div > table th {
-                background: #036;
+                background: #0D5082;
                 color: #fff;
                 font-weight: normal;
                 text-align: left; }

@@ -110,6 +110,7 @@ define(['jquery', 'templates/html.jst', 'tools/domain'], function($, htmlJST, Do
 				category_name: "team-members",
 				order: "ASC",
 				orderby: "date",
+				count: 1000,
 				r: Math.floor((Math.random()*1000)+1)
 			}, function(response) {
 				if(response.status && response.status === "ok" && response.posts) {
@@ -129,6 +130,7 @@ define(['jquery', 'templates/html.jst', 'tools/domain'], function($, htmlJST, Do
 					_this.addEvents();
 					_this.startLoop();
 					_this.el.addClass("loaded");
+					FB.Canvas.setSize();
 				}
 			});
 		},

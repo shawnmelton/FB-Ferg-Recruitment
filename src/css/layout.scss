@@ -14,6 +14,7 @@ html {
 	>body {
 		position: relative;
 		margin: 0;
+		overflow: hidden;
 
 		>#wrapper {
 			width: 800px;
@@ -301,11 +302,12 @@ html {
 							border: 0;
 							font-family: arial, sans-serif;
 							width: 700px;
+							margin: 0 auto;
 							background: #eee;
 							font-size: $baseFontSize - 1;
 
 							th {
-								background: #036;
+								background: #0D5082;
 								color: #fff;
 								font-weight: normal;
 								text-align: left;

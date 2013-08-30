@@ -19,6 +19,7 @@ define(['jquery', 'tools/domain'], function($, Domain) {
 					}));
 
 					_this.el.addClass("loaded");
+					FB.Canvas.setSize();
 				}
 			});
 		},

@@ -26,6 +26,7 @@ define(['jquery', 'templates/html.jst', 'tools/domain'], function($, htmlJST, Do
 				order: "DESC",
 				orderby: "date",
 				date_format: "M d, Y",
+				count: 1000,
 				r: Math.floor((Math.random()*1000)+1)
 			}, function(response) {
 				if(response.status && response.status === "ok" && response.posts) {
@@ -34,6 +35,7 @@ define(['jquery', 'templates/html.jst', 'tools/domain'], function($, htmlJST, Do
 					}));
 
 					_this.addAlternatingRowColors();
+					FB.Canvas.setSize();
 				}
 			});
 		}

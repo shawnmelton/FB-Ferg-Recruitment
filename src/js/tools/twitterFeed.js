@@ -91,6 +91,8 @@ define(['jquery', 'templates/html.jst', 'libs/sha1', 'libs/codebird'], function(
 			    				tweets: tweets
 			    			}));
 			    		}
+
+			    		FB.Canvas.setSize();
 			    	}
 			    },
 				true

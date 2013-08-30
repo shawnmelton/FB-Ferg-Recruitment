@@ -2,7 +2,7 @@
 <% _.each(recruiters, function(recruiter) { %>
 	<div>
 		<% _.each(recruiter.attachments, function(attachment) { %>
-			<img src="<%= attachment.url %>" alt="<%= recruiter.title %>">
+			<img src="<%= attachment.url.replace("http:", "https:") %>" alt="<%= recruiter.title %>">
 		<% }); %>
 		<h4><%= recruiter.title %></h4>
 	</div>

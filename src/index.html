@@ -3,12 +3,21 @@
 	<head>
 		<title>Ferguson Recruitment</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" type="text/css" href="/css/styles.css">
 		<script type="text/javascript" data-main="/js/app.min" src="/js/require.min.js"></script>
 		<!--[if lt IE 9]><script src="/js/ie-lte-9.js"></script><![endif]-->
+		<script type="text/javascript">
+			window.fbAsyncInit = function() {
+				FB.init({
+					appId      : '154877231378169',
+					channelUrl : '//swaydevsite.com/ferguson-careers/channel.html'
+				});
+				FB.Canvas.setAutoGrow();
+			};
+		</script>
 	</head>
 	<body>
+		<div id="fb-root"></div>
 		<div id="wrapper">
 			<iframe src="https://sjobs.brassring.com/1033/ASP/TG/cim_home.asp?partnerid=25371&amp;siteid=5331" height="1" width="1" id="cookie-loading"></iframe>
 			<header>
@@ -102,5 +111,14 @@
 				</div>
 			</footer>
 		</div>
+		<script type="text/javascript">
+			(function(d, s, id){
+				var js, fjs = d.getElementsByTagName(s)[0];
+				if (d.getElementById(id)) {return;}
+				js = d.createElement(s); js.id = id;
+				js.src = "//connect.facebook.net/en_US/all.js";
+				fjs.parentNode.insertBefore(js, fjs);
+			}(document, 'script', 'facebook-jssdk'));
+		</script>
 	</body>
 </html>

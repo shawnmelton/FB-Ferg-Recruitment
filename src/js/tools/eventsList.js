@@ -44,7 +44,9 @@ define(['jquery', 'templates/html.jst', 'tools/domain'], function($, htmlJST, Do
 			$.getJSON(Domain.get() +"content/", {
 				json: "get_events",
 				field: this.orderField,
-				dir: (this.orderDirAsc ? "asc" : "desc")
+				dir: (this.orderDirAsc ? "asc" : "desc"),
+				count: 1000,
+				r: Math.floor((Math.random()*1000)+1)
 			}, function(response) {
 				if(response.status && response.status === "ok" && response.events) {
 					_this.el.html(JST['src/js/templates/eventsList.html']({
@@ -52,6 +54,7 @@ define(['jquery', 'templates/html.jst', 'tools/domain'], function($, htmlJST, Do
 					}));
 
 					_this.setTable();
+					FB.Canvas.setSize();
 				}
 			});
 		},
