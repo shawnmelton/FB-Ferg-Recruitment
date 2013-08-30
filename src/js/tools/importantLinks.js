@@ -10,7 +10,8 @@ define(['jquery', 'tools/domain'], function($, Domain) {
 			var _this = this;
 			$.getJSON(Domain.get() +"content/", {
 				json: "get_posts",
-				category_name: "important-link"
+				category_name: "important-link",
+				r: Math.floor((Math.random()*1000)+1)
 			}, function(response) {
 				if(response.status && response.status === "ok" && response.posts) {
 					_this.el.append(JST['src/js/templates/importantLinks.html']({

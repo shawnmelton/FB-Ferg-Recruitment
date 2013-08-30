@@ -25,7 +25,8 @@ define(['jquery', 'templates/html.jst', 'tools/domain'], function($, htmlJST, Do
 				category_name: "job-postings",
 				order: "DESC",
 				orderby: "date",
-				date_format: "M d, Y"
+				date_format: "M d, Y",
+				r: Math.floor((Math.random()*1000)+1)
 			}, function(response) {
 				if(response.status && response.status === "ok" && response.posts) {
 					_this.el.append(JST['src/js/templates/jobPostings.html']({

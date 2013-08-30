@@ -109,7 +109,8 @@ define(['jquery', 'templates/html.jst', 'tools/domain'], function($, htmlJST, Do
 				json: "get_posts",
 				category_name: "team-members",
 				order: "ASC",
-				orderby: "date"
+				orderby: "date",
+				r: Math.floor((Math.random()*1000)+1)
 			}, function(response) {
 				if(response.status && response.status === "ok" && response.posts) {
 					_this.recruiters = response.posts;
